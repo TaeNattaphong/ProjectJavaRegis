@@ -26,14 +26,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="92.0" layoutY="184.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #979797;" />
-      <PasswordField layoutX="92.0" layoutY="225.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #979797;" />
+      <TextField fx:id="userLogin" layoutX="92.0" layoutY="184.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #979797;" />
+      <PasswordField fx:id="passLogin" layoutX="92.0" layoutY="225.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #979797;" />
       <Label layoutX="84.0" layoutY="264.0" text="หากยังไม่มีบัญชีผู้ใช้" textFill="#2cbd15">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Button fx:id="registerButton" layoutX="227.0" layoutY="265.0" mnemonicParsing="false" onAction="#changeRegisClick" style="-fx-background-color: #797979;" text="ลงทะเบียน" textFill="#93c401" underline="true" />
-      <Button layoutX="258.0" layoutY="226.0" mnemonicParsing="false" style="-fx-background-color: #797979;" text="Login" textFill="#93c401" />
+      <Button fx:id="login" layoutX="258.0" layoutY="226.0" mnemonicParsing="false" onAction="#loginIdPass" style="-fx-background-color: #797979;" text="Login" textFill="#93c401" />
    </children>
 </AnchorPane>
