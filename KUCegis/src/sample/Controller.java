@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -32,13 +33,21 @@ public class Controller {
         window.show();
     }
 
-    public void loginIdPass(ActionEvent actionEvent) {
+    public void loginIdPass(ActionEvent actionEvent) throws IOException {
         String loginLabelUserPass = userLogin.getText() + passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
         System.out.println(loginLabelUserPass);
-        Path file = Paths.get("IdPass.txt");
-//        BufferedReader reader = Files.newBufferedReader(file, );
+//            Path file = Paths.get("IdPass.txt");
+//            BufferedReader reader = Files.newBufferedReader(file, );
+        boolean isUser = true;
+        if (isUser) {
+            Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+            Scene homepageView = new Scene(homepage);
+            Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            window.setScene(homepageView);
+            window.show();
+        }
     }
 }
 
