@@ -1,5 +1,8 @@
 package sample;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +15,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -34,13 +34,25 @@ public class Controller {
     }
 
     public void loginIdPass(ActionEvent actionEvent) throws IOException {
-        String loginLabelUserPass = userLogin.getText() + passLogin.getText();
+        String user = userLogin.getText();
+        String pass = passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
-        System.out.println(loginLabelUserPass);
-//            Path file = Paths.get("IdPass.txt");
-//            BufferedReader reader = Files.newBufferedReader(file, );
-        boolean isUser = true;
+        System.out.println(user + pass);
+
+        boolean isUser = false;
+        BufferedReader reader = new BufferedReader(new FileReader("Data.json"));
+        Gson gson = new Gson();
+        JsonArray array = gson.fromJson(reader, JsonArray.class);
+
+        for (int i = 0 ; i < array.size() ; i++) {
+            JsonElement element = array.get(i);
+            Account account = gson.fromJson(element, Account.class);
+
+            if (user.equals(account.getAccountName()) && pass.equals(account.getPass())) isUser = true;
+        }
+        reader.close();
+
         if (isUser) {
             Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
             Scene homepageView = new Scene(homepage);
