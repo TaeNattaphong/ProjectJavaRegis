@@ -15,6 +15,10 @@ public class Account {
         this.eMail = eMail;
     }
 
+    public String getPass() {
+        return pass;
+    }
+
     public String getName() {
         return name;
     }
