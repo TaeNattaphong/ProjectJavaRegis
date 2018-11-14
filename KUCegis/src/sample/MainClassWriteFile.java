@@ -22,14 +22,14 @@ public class MainClassWriteFile {
             JsonElement element = array.get(i);
             Account account = gson.fromJson(element, Account.class);
 
-            System.out.println(account.geteMail());
+            System.out.println(account.getAccountName());
         }
         reader.close();
     }
 
     private static void writeFile() throws IOException{
-        Account account = new Account("Tae", Gender.MALE, "MK", "admin1234", "mk@hotmail");
-        Account account2 = new Account("Bossoo", Gender.MALE, "K", "admin", "k@hotmail");
+        Account account = new Account("Tae", "MK", "admin1234", "mk@hotmail", "fg");
+        Account account2 = new Account("Bossoo", "K", "admin", "k@hotmail", "df");
 
         ArrayList<Account> allAccount = new ArrayList<>();
         allAccount.add(account);
