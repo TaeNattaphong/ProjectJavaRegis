@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import sample.TextFieldLimited?>
 <AnchorPane prefHeight="348.0" prefWidth="595.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label layoutX="38.0" layoutY="22.0" text="Register" textFill="#00b915">
@@ -15,12 +16,12 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="96.0" text="ชื่อ :" textFill="#00b915">
+      <Label layoutX="38.0" layoutY="96.0" text="ชื่อ-นามสกุล : :" textFill="#00b915">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="96.0" text="นามสกุล :" textFill="#00b915">
+      <Label layoutX="313.0" layoutY="96.0" text="รหัสนิสิต:" textFill="#00b915">
          <font>
             <Font size="18.0" />
          </font>
@@ -51,8 +52,8 @@
          </font>
       </Label>
       <Button layoutX="436.0" layoutY="282.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="68.0" text="ยืนยัน" />
-      <TextField layoutX="71.0" layoutY="97.0" style="-fx-background-color: #979797;" />
-      <TextField layoutX="351.0" layoutY="97.0" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: #979797;" />
+      <TextField layoutX="138.0" layoutY="97.0" style="-fx-background-color: #979797;" />
+      <TextFieldLimited fx:id="nisitNumField" layoutX="392.0" layoutY="97.0" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #979797;" />
       <TextField layoutX="100.0" layoutY="193.0" style="-fx-background-color: #979797;" />
       <PasswordField layoutX="368.0" layoutY="193.0" style="-fx-background-color: #979797;" />
       <PasswordField layoutX="153.0" layoutY="242.0" style="-fx-background-color: #979797;" />
