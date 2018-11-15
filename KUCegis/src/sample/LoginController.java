@@ -22,7 +22,8 @@ public class LoginController {
     @FXML private TextField userLogin;
     @FXML private PasswordField passLogin;
     @FXML private TextField name, accountName;
-    @FXML private PasswordField studentId, id, reid;
+    @FXML private TextFieldLimited studentId;
+    @FXML private PasswordField  pass, reid;
     @FXML private RadioButton male, female;
 
 
@@ -81,16 +82,11 @@ public class LoginController {
             allAccount.add(a);
         }
 
-        String names = name.getText();
-        String accountNames = accountName.getText();
-        String studentIds = studentId.getText();
-        String ids = id.getText();
-        String reids = reid.getText();
-        String sex = "male";
+
 //        if (male.isArmed() && female.isCache()) sex = "male";
 //        else if (male.isCache() && female.isArmed()) sex = "female";
 //        else throw new IllegalArgumentException("เลือกเพศ");
-        Account account = new Account(names, studentIds, sex, accountNames, ids);
+        Account account = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
         allAccount.add(account);
         String json = gson.toJson(allAccount);
         PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));

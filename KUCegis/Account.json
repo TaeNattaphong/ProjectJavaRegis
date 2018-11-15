@@ -14,17 +14,10 @@
     "pass": "df"
   },
   {
-    "name": "w",
-    "studentId": "w",
+    "name": "parinya",
+    "studentId": "6010405343",
     "gender": "male",
-    "accountName": "w",
-    "pass": "w"
-  },
-  {
-    "name": "b",
-    "studentId": "b",
-    "gender": "male",
-    "accountName": "b",
-    "pass": "b"
+    "accountName": "boss",
+    "pass": "boss"
   }
 ]
