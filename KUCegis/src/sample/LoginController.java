@@ -64,6 +64,23 @@ public class LoginController {
     }
 
     public void onClickRegisOk(ActionEvent actionEvent) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
+        Gson gson = new Gson();
+        JsonArray array = gson.fromJson(reader, JsonArray.class);
+        ArrayList<Account> allAccount = new ArrayList<>();
+        for (int i = 0; i < array.size(); i++) {
+            JsonElement element = array.get(i);
+            Account account = gson.fromJson(element, Account.class);
+            String name = account.getName();
+            String studentId = account.getStudentId();
+            String gender = account.getGender();
+            String accountName = account.getAccountName();
+            String pass = account.getPass();
+
+            Account a = new Account(name, studentId, gender, accountName, pass);
+            allAccount.add(a);
+        }
+
         String names = name.getText();
         String accountNames = accountName.getText();
         String studentIds = studentId.getText();
@@ -74,23 +91,13 @@ public class LoginController {
 //        else if (male.isCache() && female.isArmed()) sex = "female";
 //        else throw new IllegalArgumentException("เลือกเพศ");
         Account account = new Account(names, studentIds, sex, accountNames, ids);
-
-        ArrayList<Account> accountArrayList = new ArrayList<>();
-        accountArrayList.add(account);
-
-        Gson gson = new Gson();
-        String json = gson.toJson(accountArrayList);
-
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Account.json"));
-        PrintWriter printWriter = new PrintWriter(writer);
+        allAccount.add(account);
+        String json = gson.toJson(allAccount);
+        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
         printWriter.println(json);
-        printWriter.close();
 
-        name.setText("");
-        accountName.setText("");
-        studentId.setText("");
-        id.setText("");
-        reid.setText("");
+        reader.close();
+        printWriter.close();
 
         Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene regisView = new Scene(regis, 330, 310);

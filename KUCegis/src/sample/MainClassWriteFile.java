@@ -9,25 +9,38 @@ import java.util.ArrayList;
 
 public class MainClassWriteFile {
     public static void main(String[] args) throws IOException {
-        readFile();
-//        writeFile();
+//        readFile();
+        writeFile();
     }
 
     private static void readFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("Data.json"));
+        BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
         Gson gson = new Gson();
         JsonArray array = gson.fromJson(reader, JsonArray.class);
-
-        for (int i=0; i<array.size(); i++) {
+        ArrayList<Account> allAccount = new ArrayList<>();
+        for (int i = 0; i < array.size(); i++) {
             JsonElement element = array.get(i);
             Account account = gson.fromJson(element, Account.class);
+            String name = account.getName();
+            String studentId = account.getStudentId();
+            String gender = account.getGender();
+            String accountName = account.getAccountName();
+            String pass = account.getPass();
 
-            System.out.println(account.getAccountName());
+            Account a = new Account(name, studentId, gender, accountName, pass);
+            allAccount.add(a);
         }
+        Account a = new Account("Tae", "MK", "admin1234", "mk@hotmail", "fg");
+        allAccount.add(a);
+        String json = gson.toJson(allAccount);
+        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+        printWriter.println(json);
+
         reader.close();
+        printWriter.close();
     }
 
-    private static void writeFile() throws IOException{
+    private static void writeFile() throws IOException {
         Account account = new Account("Tae", "MK", "admin1234", "mk@hotmail", "fg");
         Account account2 = new Account("Bossoo", "K", "admin", "k@hotmail", "df");
 
@@ -38,9 +51,7 @@ public class MainClassWriteFile {
         Gson gson = new Gson();
         String json = gson.toJson(allAccount);
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Data.json"));
-        PrintWriter printWriter = new PrintWriter(writer);
-
+        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
         printWriter.println(json);
         printWriter.close();
     }

@@ -9,7 +9,13 @@
 <?import javafx.scene.text.Font?>
 
 <?import sample.TextFieldLimited?>
+<<<<<<< Updated upstream
 <AnchorPane prefHeight="348.0" prefWidth="595.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+=======
+<AnchorPane prefHeight="348.0" prefWidth="595.0" style="-fx-background-color: #373737;"
+            xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+>>>>>>> Stashed changes
    <children>
       <Label layoutX="38.0" layoutY="22.0" text="Register" textFill="#00b915">
          <font>
@@ -51,7 +57,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="436.0" layoutY="282.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="68.0" text="ยืนยัน" />
+      <Button layoutX="436.0" layoutY="282.0" mnemonicParsing="false" prefHeight="36.0"
+              prefWidth="68.0" text="ยืนยัน" />
       <TextField layoutX="138.0" layoutY="97.0" style="-fx-background-color: #979797;" />
       <TextFieldLimited fx:id="nisitNumField" layoutX="392.0" layoutY="97.0" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #979797;" />
       <TextField layoutX="100.0" layoutY="193.0" style="-fx-background-color: #979797;" />
