@@ -48,10 +48,19 @@ public class MainClassWriteFile {
         allAccount.add(account);
         allAccount.add(account2);
 
-        Gson gson = new Gson();
-        String json = gson.toJson(allAccount);
 
-        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+        Subject s1 = new Subject("01418112","Programming Concept","3");
+        Subject s2 = new Subject("01418113","Computer Programming","3");
+
+        ArrayList<Subject>  allsubect = new ArrayList<>();
+        allsubect.add(s1);
+        allsubect.add(s2);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(allsubect);
+
+
+        PrintWriter printWriter = new PrintWriter(new FileWriter("Subject.json"));
         printWriter.println(json);
         printWriter.close();
     }
