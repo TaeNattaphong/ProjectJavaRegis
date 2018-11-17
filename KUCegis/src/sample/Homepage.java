@@ -1,5 +1,8 @@
 package sample;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -7,6 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
 
 
 public class Homepage {
@@ -22,18 +30,23 @@ public class Homepage {
     private VBox vbox;
     @FXML private  Pane  pane;
 
-
-
     @FXML
-    public void initialize() {
+    public void initialize() throws FileNotFoundException {
 
-
-        for(int i=0 ; i<10; i++){
-         vbox.getChildren().add(new Button("text   " + i));
-         vbox.getChildren().add(new Text(""));
+        BufferedReader reader = new BufferedReader(new FileReader("Subject.json"));
+        Gson gson = new Gson();
+        JsonArray array = gson.fromJson(reader, JsonArray.class);
+        for(int i = 0 ; i < array.size() ; i++){
+            JsonElement element = array.get(i);
+            Subject subject = gson.fromJson(element, Subject.class);
+            Button button = new Button(subject.getSubjectname() + subject.getSubjectcredit());
+            button.setStyle(
+                    "-fx-background-radius: 25; " +
+                    "-fx-background-color: #979797");
+            vbox.getChildren().add(button);
+            vbox.getChildren().add(new Text(""));
         }
 
-//        term1.getChildren().set(number.setText("001"));
     }
 
     @FXML

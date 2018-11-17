@@ -53,6 +53,7 @@
                                                 </Pane>
                                              </children>
                                           </AnchorPane>
+                                          <Label fx:id="setstylelabel" style="-fx-font-size: 23;" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>
