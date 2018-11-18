@@ -58,7 +58,7 @@ public class LoginController {
 
         if (isUser) {
             Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-            Scene homepageView = new Scene(homepage, 600, 400);
+            Scene homepageView = new Scene(homepage, 693, 470);
             Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             window.setScene(homepageView);
             window.show();
