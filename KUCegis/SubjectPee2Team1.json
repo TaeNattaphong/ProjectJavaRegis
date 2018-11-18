@@ -1,0 +1,37 @@
+[
+  {
+    "subjectnumber": "01417112",
+    "subjectname": "Calculus II",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418113",
+    "subjectname": "Computer Programming",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418132",
+    "subjectname": "Fundamentals of Computing",
+    "subjectcredit": 4
+  },
+  {
+    "subjectnumber": "01175",
+    "subjectname": "(สาระอยู่ดีมีสุข - พลศึกษา)",
+    "subjectcredit": 1
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระศาสตร์แห่งผู้ประกอบการ)",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระพลเมืองไทยฯ)",
+    "subjectcredit": 1
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระสุนทรียศาสตร์)",
+    "subjectcredit": 3
+  }
+]

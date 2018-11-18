@@ -1,0 +1,37 @@
+[
+  {
+    "subjectnumber": "01418332",
+    "subjectname": "Information System Security",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418333",
+    "subjectname": "Automata Theory",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01418334",
+    "subjectname": "Compiler Techniques",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01418351",
+    "subjectname": "Prin. in CCs \u0026 Cloud Computing",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418390",
+    "subjectname": "Co-op. Education Preparation",
+    "subjectcredit": 1
+  },
+  {
+    "subjectnumber": "01418",
+    "subjectname": "Major Electives III",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "Free Electives I",
+    "subjectcredit": 3
+  }
+]
