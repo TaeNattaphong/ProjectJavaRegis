@@ -14,6 +14,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.xml.stream.util.StreamReaderDelegate;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -25,7 +27,6 @@ public class LoginController {
     @FXML private TextFieldLimited studentId;
     @FXML private PasswordField  pass, reid;
     @FXML private RadioButton male, female;
-
 
     public void changeRegisClick(ActionEvent actionEvent) throws IOException {
         Parent regis = FXMLLoader.load(getClass().getResource("regisV2.fxml"));
@@ -57,7 +58,7 @@ public class LoginController {
 
         if (isUser) {
             Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-            Scene homepageView = new Scene(homepage);
+            Scene homepageView = new Scene(homepage, 600, 400);
             Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             window.setScene(homepageView);
             window.show();

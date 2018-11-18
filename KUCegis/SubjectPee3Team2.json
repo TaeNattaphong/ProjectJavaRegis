@@ -1,1 +1,37 @@
-[{"subjectnumber":"01418321","subjectname":"System Analysis and Design","subjectcredit":3},{"subjectnumber":"01418331","subjectname":"Operating Systems","subjectcredit":4},{"subjectnumber":"01418341","subjectname":"Intellectual Prop \u0026 Profess. Ethics","subjectcredit":3},{"subjectnumber":"01418497","subjectname":"Seminar","subjectcredit":1},{"subjectnumber":"01418","subjectname":"Major Electives II","subjectcredit":3},{"subjectnumber":"01","subjectname":"(สาระภาษาฯ - ภาษาต่างประเทศ 3)","subjectcredit":3}]
+[
+  {
+    "subjectnumber": "01418332",
+    "subjectname": "Information System Security",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418333",
+    "subjectname": "Automata Theory",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01418334",
+    "subjectname": "Compiler Techniques",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01418351",
+    "subjectname": "Prin. in CCs \u0026 Cloud Computing",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418390",
+    "subjectname": "Co-op. Education Preparation",
+    "subjectcredit": 1
+  },
+  {
+    "subjectnumber": "01418",
+    "subjectname": "Major Electives III",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "Free Electives I",
+    "subjectcredit": 3
+  }
+]

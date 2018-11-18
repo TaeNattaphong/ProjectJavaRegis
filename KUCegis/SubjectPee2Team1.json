@@ -1,37 +1,37 @@
 [
   {
-    "subjectnumber": "01417112",
-    "subjectname": "Calculus II",
+    "subjectnumber": "01417322",
+    "subjectname": "Introductory Linear Algebra",
     "subjectcredit": 3
   },
   {
-    "subjectnumber": "01418113",
-    "subjectname": "Computer Programming",
+    "subjectnumber": "01418211",
+    "subjectname": "Software Construction",
     "subjectcredit": 3
   },
   {
-    "subjectnumber": "01418132",
-    "subjectname": "Fundamentals of Computing",
-    "subjectcredit": 4
+    "subjectnumber": "01418231",
+    "subjectname": "Data Structures",
+    "subjectcredit": 3
   },
   {
-    "subjectnumber": "01175",
-    "subjectname": "(สาระอยู่ดีมีสุข - พลศึกษา)",
+    "subjectnumber": "01422111",
+    "subjectname": "Principles of Statistics",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระภาษาฯ - IT/Computer)",
     "subjectcredit": 1
   },
   {
     "subjectnumber": "01",
-    "subjectname": "(สาระศาสตร์แห่งผู้ประกอบการ)",
-    "subjectcredit": 3
+    "subjectname": "(สาระอยู่ดีมีสุข)",
+    "subjectcredit": 2
   },
   {
     "subjectnumber": "01",
-    "subjectname": "(สาระพลเมืองไทยฯ)",
-    "subjectcredit": 1
-  },
-  {
-    "subjectnumber": "01",
-    "subjectname": "(สาระสุนทรียศาสตร์)",
+    "subjectname": "(ทั้ง 5 สาระ - คณะวิทยาศาสตร์)",
     "subjectcredit": 3
   }
 ]

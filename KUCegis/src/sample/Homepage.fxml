@@ -10,15 +10,74 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.22240802675585283" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Homepage">
+<SplitPane dividerPositions="0.22240802675585283" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Homepage">
   <items>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="160.0" prefHeight="400.0" prefWidth="160.0">
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="374.0">
          <children>
-            <Label layoutX="14.0" layoutY="50.0" text="ชื่อ-นามสกุล:" />
-            <Label fx:id="LabelName" layoutX="82.0" layoutY="50.0" text="Label" />
-            <Label layoutX="14.0" layoutY="95.0" text="รหัสนิสิต:" />
-            <Label fx:id="LabelNum" layoutX="73.0" layoutY="95.0" text="Label" />
-            <SplitMenuButton fx:id="class0" layoutX="20.0" layoutY="164.0" mnemonicParsing="false" text="ชั้นปี">
+            <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="398.0" prefWidth="430.0" style="-fx-background-color: #373737;">
+              <items>
+                <AnchorPane fx:id="term1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="424.0" style="-fx-background-color: #373737;">
+                     <children>
+                        <ScrollPane layoutX="-6.0" prefHeight="199.0" prefWidth="432.0">
+                           <content>
+                              <VBox prefHeight="600.0" prefWidth="410.0">
+                                 <children>
+                                    <Pane prefHeight="53.0" prefWidth="412.0" style="-fx-background-color: #797979;">
+                                       <children>
+                                          <Pane layoutX="8.0" prefHeight="53.0" prefWidth="114.0" style="-fx-background-color: #129042; -fx-background-radius: 25;">
+                                             <children>
+                                                <Label layoutX="21.0" layoutY="7.0" prefHeight="38.0" prefWidth="62.0" text="เทอม 1" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <VBox fx:id="vboxTeam1" prefHeight="534.0" prefWidth="421.0" style="-fx-background-color: #797979;" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane fx:id="team2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="150.0" minWidth="426.0" prefHeight="308.0" prefWidth="160.0" style="-fx-background-color: #373737;">
+                     <children>
+                        <ScrollPane layoutX="-2.0" maxHeight="204.0" maxWidth="430.0" minHeight="189.0" minWidth="430.0" prefHeight="199.0" prefWidth="430.0">
+                           <content>
+                              <VBox prefHeight="600.0" prefWidth="410.0" style="-fx-background-color: #797979;">
+                                 <children>
+                                    <Pane prefHeight="53.0" prefWidth="412.0">
+                                       <children>
+                                          <Pane layoutX="7.0" prefHeight="53.0" prefWidth="114.0" style="-fx-background-color: #129042; -fx-background-radius: 25;">
+                                             <children>
+                                                <Label layoutX="21.0" layoutY="9.0" prefHeight="28.0" prefWidth="69.0" text="เทอม 2" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                    <VBox fx:id="vboxTeam2" prefHeight="529.0" prefWidth="412.0" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children></AnchorPane>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="160.0" prefHeight="400.0" prefWidth="180.0">
+         <children>
+            <Label layoutX="14.0" layoutY="94.0" text="ชื่อ-นามสกุล:" textFill="WHITE" />
+            <Label fx:id="labelName" layoutX="90.0" layoutY="95.0" prefHeight="18.0" prefWidth="88.0" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="140.0" text="รหัสนิสิต:" textFill="WHITE" />
+            <Label fx:id="labelNum" layoutX="69.0" layoutY="140.0" prefHeight="18.0" prefWidth="82.0" textFill="WHITE" />
+            <SplitMenuButton fx:id="class0" layoutX="90.0" layoutY="200.0" mnemonicParsing="false" style="-fx-background-radius: 5;" text="ชั้นปี">
               <items>
                 <MenuItem fx:id="class1" mnemonicParsing="false" onAction="#setClass1" text="ปี1" />
                 <MenuItem fx:id="class2" mnemonicParsing="false" onAction="#setClass2" text="ปี2" />
@@ -28,50 +87,5 @@
             </SplitMenuButton>
          </children>
       </AnchorPane>
-    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="374.0">
-         <children>
-            <SplitPane dividerPositions="0.5134680134680135" maxHeight="-Infinity" maxWidth="-Infinity" orientation="VERTICAL" prefHeight="398.0" prefWidth="430.0">
-              <items>
-                <AnchorPane fx:id="term1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="424.0">
-                     <children>
-                        <ScrollPane prefHeight="199.0" prefWidth="424.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="400.0">
-                                 <children>
-                                    <VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="402.0">
-                                       <children>
-                                          <AnchorPane prefHeight="35.0" prefWidth="408.0">
-                                             <children>
-                                                <Pane fx:id="pane" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: lightgreen;">
-                                                   <children>
-                                                      <Label layoutX="29.0" layoutY="6.0" prefHeight="28.0" prefWidth="69.0" text="เทอม1">
-                                                         <font>
-                                                            <Font size="25.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </Pane>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </AnchorPane>
-                          </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="150.0" minWidth="426.0" prefHeight="308.0" prefWidth="160.0">
-                     <children>
-                        <ScrollPane layoutX="-1.0" layoutY="-5.0" maxHeight="204.0" maxWidth="430.0" minHeight="189.0" minWidth="430.0" prefHeight="199.0" prefWidth="430.0">
-                           <content>
-                              <VBox fx:id="addBottonVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" />
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
-              </items>
-            </SplitPane>
-         </children></AnchorPane>
   </items>
 </SplitPane>

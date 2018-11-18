@@ -1,7 +1,27 @@
 [
   {
-    "subjectnumber": "01418490",
-    "subjectname": "Co-op. Education",
-    "subjectcredit": 6
+    "subjectnumber": "01418499",
+    "subjectname": "CS Project",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418",
+    "subjectname": "Major Electives IV",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418",
+    "subjectname": "Major Electives V",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418",
+    "subjectname": "Major Electives VI",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "Free Electives II",
+    "subjectcredit": 3
   }
 ]

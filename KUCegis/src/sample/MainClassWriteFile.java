@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MainClassWriteFile {
     public static void main(String[] args) throws IOException {
 //        readFile();
-        writeFile();
+//        writeFile();
     }
 
 //    private static void readFile() throws IOException {
@@ -103,9 +103,9 @@ public class MainClassWriteFile {
         team2Pee4.add(new Subject("01", "Free Electives II", 3));
 
         Gson gson = new Gson();
-        String json = gson.toJson(team1Pee1);
+        String json = gson.toJson(team2Pee4);
 
-        PrintWriter printWriter = new PrintWriter(new FileWriter("SubjectPee1Team1.json"));
+        PrintWriter printWriter = new PrintWriter(new FileWriter("SubjectPee4Team2.json"));
         printWriter.println(json);
         printWriter.close();
     }
