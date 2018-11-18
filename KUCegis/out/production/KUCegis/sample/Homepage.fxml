@@ -36,9 +36,9 @@
                      <children>
                         <ScrollPane prefHeight="199.0" prefWidth="424.0">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="423.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="400.0">
                                  <children>
-                                    <VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="408.0">
+                                    <VBox fx:id="vbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="402.0">
                                        <children>
                                           <AnchorPane prefHeight="35.0" prefWidth="408.0">
                                              <children>
@@ -53,7 +53,6 @@
                                                 </Pane>
                                              </children>
                                           </AnchorPane>
-                                          <Label fx:id="setstylelabel" style="-fx-font-size: 23;" text="Label" />
                                        </children>
                                     </VBox>
                                  </children>

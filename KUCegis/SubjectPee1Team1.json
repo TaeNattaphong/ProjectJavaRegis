@@ -1,0 +1,37 @@
+[
+  {
+    "subjectnumber": "01417111",
+    "subjectname": "Calculus",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418112",
+    "subjectname": "Fund. Programming Concepts",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01418114",
+    "subjectname": "Intro. to Computer Science",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01418131",
+    "subjectname": "Digital Computer Logic",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01999111",
+    "subjectname": "ศาสตร์แห่งแผ่นดิน",
+    "subjectcredit": 2
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระภาษาฯ - ภาษาต่างประเทศ 1)",
+    "subjectcredit": 3
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระภาษาฯ - ภาษาไทย)",
+    "subjectcredit": 3
+  }
+]

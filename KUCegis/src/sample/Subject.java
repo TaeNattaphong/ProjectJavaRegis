@@ -3,9 +3,9 @@ package sample;
 public class Subject {
     private  String subjectnumber;
     private  String subjectname;
-    private  String subjectcredit;
+    private  int subjectcredit;
 
-    public Subject(String subjectnumber, String subjectname, String subjectcredit) {
+    public Subject(String subjectnumber, String subjectname, int subjectcredit) {
         this.subjectnumber = subjectnumber;
         this.subjectname = subjectname;
         this.subjectcredit = subjectcredit;
@@ -19,7 +19,7 @@ public class Subject {
         return subjectname;
     }
 
-    public String getSubjectcredit() {
+    public int getSubjectcredit() {
         return subjectcredit;
     }
 }
