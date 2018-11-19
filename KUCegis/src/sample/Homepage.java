@@ -26,12 +26,12 @@ public class Homepage {
         JsonArray array = gson.fromJson(reader, JsonArray.class);
         JsonElement element = array.get(0);
         Account account = gson.fromJson(element, Account.class);
-//        labelName.setText(account.getName());
-//        labelNum.setText(account.getStudentId());
     }
 
     public void setColorButtonClass(Button aClass, Button bClass, Button cClass, Button dClass, Button eClass) {
-        aClass.setStyle("-fx-background-color: #373737;");
+        aClass.setStyle("-fx-background-color: #373737;"
+                + "-fx-border-color: #0C0B0B;"
+                +"-fx-border-width: 3; ");
         bClass.setStyle("-fx-background-color: #404040;");
         cClass.setStyle("-fx-background-color: #404040;");
         dClass.setStyle("-fx-background-color: #404040;");
@@ -46,13 +46,13 @@ public class Homepage {
         for(int i = 0 ; i < array.size() ; i++){
             JsonElement element1 = array.get(i);
             Subject subject = gson.fromJson(element1, Subject.class);
-            Button button = new Button(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + subject.getSubjectcredit());
+            Button button = new Button(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")");
             button.setStyle(
                     "-fx-background-radius: 25; " +
-                            "-fx-background-color: #979797");
-            button.setPrefSize(500, 30);
+                            "-fx-background-color: #0D2511");
+            button.setPrefSize(480, 30);
             button.setBorder(new Border(new BorderStroke(Color.web("#345232"), BorderStrokeStyle.SOLID, new CornerRadii(25), new BorderWidths(3))));
-            button.setTextFill(Color.WHITE);
+            button.setTextFill(Color.LIGHTGREEN);
             vbox.getChildren().add(new Text(""));
             vbox.getChildren().add(button);
         }
