@@ -5,18 +5,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -54,15 +46,24 @@ public class Homepage {
         for(int i = 0 ; i < array.size() ; i++){
             JsonElement element1 = array.get(i);
             Subject subject = gson.fromJson(element1, Subject.class);
-            Button button = new Button(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")");
+            MenuButton button = new MenuButton(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")");
+            MenuItem item1 = new MenuItem("                                                  ลงเรียนแล้ว                                              ");
+            MenuItem item2 = new MenuItem("                                                 ยังไม่ได้ลงเรียน                                              ");
+            button.getItems().addAll(item1, item2);
+            item1.setOnAction(e -> {
+                button.setStyle("-fx-background-color: #006e0a;");
+                button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ลงเรียนแล้ว");
+            });
+            item2.setOnAction(e -> {button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ยังไม่ได้ลงเรียน");
+            button.setStyle("-fx-background-color: #6e0200;");
+            });
             button.setStyle(
-                    "-fx-background-radius: 0; " +
-                            "-fx-background-color: #0D2511");
-            button.setPrefSize(480, 30);
+                            "-fx-background-color: rgba(43,40,41,0.9)");
+            button.setPrefWidth(500);
             button.setBorder(new Border(new BorderStroke(subject.getColorSub(), BorderStrokeStyle.SOLID, new CornerRadii(25), new BorderWidths(3))));
             button.setTextFill(Color.LIGHTGREEN);
-            vbox.getChildren().add(new Text(""));
             vbox.getChildren().add(button);
+            vbox.getChildren().add(new Text(""));
         }
     }
 
