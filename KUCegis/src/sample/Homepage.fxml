@@ -6,7 +6,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.text.Font?>
 
 <SplitPane dividerPositions="0.7337192474674384" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="693.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Homepage">
@@ -15,13 +14,12 @@
          <children>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="462.0" prefWidth="504.0">
               <items>
-                  <ScrollPane prefHeight="216.0" prefWidth="441.0">
+                  <ScrollPane prefHeight="219.0" prefWidth="522.0">
                      <content>
-                        <VBox prefHeight="219.0" prefWidth="493.0" style="-fx-background-color: #404040;">
+                        <VBox prefHeight="219.0" prefWidth="501.0" style="-fx-background-color: #404040;">
                            <children>
                               <AnchorPane prefHeight="63.0" prefWidth="503.0">
                                  <children>
-                                    <Ellipse fill="#20c95b" layoutX="91.0" layoutY="31.0" radiusX="77.0" radiusY="24.0" stroke="BLACK" strokeType="INSIDE" />
                                     <Label layoutX="60.0" layoutY="15.0" prefHeight="25.0" prefWidth="61.0" text="เทอม1">
                                        <font>
                                           <Font size="22.0" />
@@ -29,7 +27,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <VBox fx:id="vboxTeam1" prefHeight="61.0" prefWidth="503.0" />
+                              <VBox fx:id="vboxTeam1" prefHeight="62.0" prefWidth="542.0" />
                            </children>
                         </VBox>
                      </content>
@@ -38,11 +36,10 @@
                      <children>
                         <ScrollPane prefHeight="235.0" prefWidth="504.0">
                            <content>
-                              <VBox prefHeight="234.0" prefWidth="493.0" style="-fx-background-color: #404040;">
+                              <VBox prefHeight="234.0" prefWidth="498.0" style="-fx-background-color: #404040;">
                                  <children>
-                                    <AnchorPane prefHeight="63.0" prefWidth="503.0">
+                                    <AnchorPane prefHeight="63.0" prefWidth="503.0" scaleShape="false">
                                        <children>
-                                          <Ellipse fill="#20c95b" layoutX="99.0" layoutY="31.0" radiusX="77.0" radiusY="24.0" stroke="BLACK" strokeType="INSIDE" />
                                           <Label layoutX="62.0" layoutY="17.0" prefHeight="25.0" prefWidth="61.0" text="เทอม2">
                                              <font>
                                                 <Font size="22.0" />
@@ -59,9 +56,9 @@
               </items>
             </SplitPane>
          </children></AnchorPane>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="180.0" prefHeight="486.0" prefWidth="180.0">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="180.0" prefHeight="486.0" prefWidth="180.0" style="-fx-background-color: #404040;">
          <children>
-            <Button fx:id="accountButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="Account" textFill="WHITE" />
+            <Button fx:id="accountButton" mnemonicParsing="false" onAction="#onClickAccount" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="Account" textFill="WHITE" />
             <Button fx:id="class1" layoutY="59.0" mnemonicParsing="false" onAction="#setClass1" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 1" textFill="WHITE" />
             <Button fx:id="class2" layoutY="119.0" mnemonicParsing="false" onAction="#setClass2" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 2" textFill="WHITE" />
             <Button fx:id="class3" layoutY="178.0" mnemonicParsing="false" onAction="#setClass3" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 3" textFill="WHITE" />
