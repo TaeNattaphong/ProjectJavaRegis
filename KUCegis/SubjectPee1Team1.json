@@ -1,1 +1,86 @@
-[{"subjectnumber":"01417111","subjectname":"Calculus I","subjectcredit":3,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01418112","subjectname":"Fund. Programming Concepts","subjectcredit":3,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01418114","subjectname":"Intro. to Computer Science","subjectcredit":2,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01418131","subjectname":"Digital Computer Logic","subjectcredit":3,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01999111","subjectname":"ศาสตร์แห่งแผ่นดิน","subjectcredit":2,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01","subjectname":"(สาระภาษาฯ - ภาษาต่างประเทศ 1)","subjectcredit":3,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}},{"subjectnumber":"01","subjectname":"(สาระภาษาฯ - ภาษาไทย)","subjectcredit":3,"colorSub":{"red":1.0,"green":0.0,"blue":0.0,"opacity":1.0}}]
+[
+  {
+    "subjectnumber": "01417111",
+    "subjectname": "Calculus I",
+    "subjectcredit": 3,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 1
+  },
+  {
+    "subjectnumber": "01418112",
+    "subjectname": "Fund. Programming Concepts",
+    "subjectcredit": 3,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 2
+  },
+  {
+    "subjectnumber": "01418114",
+    "subjectname": "Intro. to Computer Science",
+    "subjectcredit": 2,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 3
+  },
+  {
+    "subjectnumber": "01418131",
+    "subjectname": "Digital Computer Logic",
+    "subjectcredit": 3,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 4
+  },
+  {
+    "subjectnumber": "01999111",
+    "subjectname": "ศาสตร์แห่งแผ่นดิน",
+    "subjectcredit": 2,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 5
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระภาษาฯ - ภาษาต่างประเทศ 1)",
+    "subjectcredit": 3,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 6
+  },
+  {
+    "subjectnumber": "01",
+    "subjectname": "(สาระภาษาฯ - ภาษาไทย)",
+    "subjectcredit": 3,
+    "colorSub": {
+      "red": 1.0,
+      "green": 0.0,
+      "blue": 0.0,
+      "opacity": 1.0
+    },
+    "passSub": 7
+  }
+]

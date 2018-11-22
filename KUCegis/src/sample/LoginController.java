@@ -19,6 +19,8 @@ import javafx.stage.StageStyle;
 import javax.xml.stream.util.StreamReaderDelegate;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginController {
     @FXML private Button registerButton, login, ok;
@@ -28,6 +30,7 @@ public class LoginController {
     @FXML private TextFieldLimited studentId;
     @FXML private PasswordField  pass, reid;
     @FXML private RadioButton male, female;
+    private Map<String, DataAccSub> user = new HashMap<>();
 
     public void changeRegisClick(ActionEvent actionEvent) throws IOException {
         Parent regis = FXMLLoader.load(getClass().getResource("regisV2.fxml"));

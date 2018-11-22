@@ -7,12 +7,14 @@ public class Subject {
     private  String subjectname;
     private  int subjectcredit;
     private Color colorSub;
+    private int passSub;
 
-    public Subject(String subjectnumber, String subjectname, int subjectcredit, Color colorSub) {
+    public Subject(String subjectnumber, String subjectname, int subjectcredit, Color colorSub, int passSub) {
         this.subjectnumber = subjectnumber;
         this.subjectname = subjectname;
         this.subjectcredit = subjectcredit;
         this.colorSub = colorSub;
+        this.passSub = passSub;
     }
 
     public String getSubjectnumber() {
@@ -33,5 +35,9 @@ public class Subject {
 
     public void setColorSub(Color colorSub) {
         this.colorSub = colorSub;
+    }
+
+    public int getPassSub() {
+        return passSub;
     }
 }

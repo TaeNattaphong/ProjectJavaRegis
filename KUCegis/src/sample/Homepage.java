@@ -103,6 +103,7 @@ public class Homepage {
     }
 
     @FXML public void onClickAccount(ActionEvent actionEvent) throws IOException {
-        AlertBox.displayAccount("Account", "Nattaphong", "6010405220", 300, 170);
+        setColorButtonClass(accountButton,class1,class2,class3,class4);
+        AlertBox.displayAccount("Account", "Nattaphong", "6010405220", 300, 170, accountButton);
     }
 }

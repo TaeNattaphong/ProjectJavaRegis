@@ -44,7 +44,7 @@ public class AlertBox {
 
     }
 
-    public static void displayAccount(String title, String name, String studentID, double width, double height) {
+    public static void displayAccount(String title, String name, String studentID, double width, double height, Button b) {
         Stage window = new Stage();
 
         window.initModality(Modality.APPLICATION_MODAL);
@@ -81,5 +81,6 @@ public class AlertBox {
         window.setResizable(false);
         window.setScene(scene);
         window.showAndWait();
+        b.setStyle("-fx-background-color: #404040;");
     }
 }

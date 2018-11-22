@@ -1,1 +1,9 @@
-[{"name":"Tae","studentId":"MK","gender":"admin1234","accountName":"mk@hotmail","pass":"fg"},{"name":"Bossoo","studentId":"K","gender":"admin","accountName":"b","pass":"b"},{"name":"parinya","studentId":"6010405343","gender":"male","accountName":"boss","pass":"boss"},{"name":"","studentId":"","gender":"male","accountName":"","pass":""},{"name":"k","studentId":"k","gender":"male","accountName":"k","pass":"k"}]
+[
+  {
+    "name": "admin",
+    "studentId": "1234567890",
+    "gender": "male",
+    "accountName": "admin",
+    "pass": "admin"
+  }
+]
