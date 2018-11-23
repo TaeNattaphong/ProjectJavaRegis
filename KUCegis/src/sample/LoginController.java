@@ -14,13 +14,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-import javax.xml.stream.util.StreamReaderDelegate;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class LoginController {
     @FXML private Button registerButton, login, ok;
@@ -30,7 +25,8 @@ public class LoginController {
     @FXML private TextFieldLimited studentId;
     @FXML private PasswordField  pass, reid;
     @FXML private RadioButton male, female;
-    private Map<String, DataAccSub> user = new HashMap<>();
+    private static String UserPass;
+    private static String studentIdPass;
 
     public void changeRegisClick(ActionEvent actionEvent) throws IOException {
         Parent regis = FXMLLoader.load(getClass().getResource("regisV2.fxml"));
@@ -45,7 +41,8 @@ public class LoginController {
         String pass = passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
-        System.out.println(user + pass);
+        setUserPass(user + pass);
+        studentIdPass = pass;
 
         boolean isUser = false;
         BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
@@ -74,36 +71,52 @@ public class LoginController {
         Gson gson = new Gson();
         JsonArray array = gson.fromJson(reader, JsonArray.class);
         ArrayList<Account> allAccount = new ArrayList<>();
-        for (int i = 0; i < array.size(); i++) {
-            JsonElement element = array.get(i);
-            Account account = gson.fromJson(element, Account.class);
-            String name = account.getName();
-            String studentId = account.getStudentId();
-            String gender = account.getGender();
-            String accountName = account.getAccountName();
-            String pass = account.getPass();
+        if (array != null) {
+            for (int i = 0; i < array.size(); i++) {
+                JsonElement element = array.get(i);
+                Account account = gson.fromJson(element, Account.class);
+                String name = account.getName();
+                String studentId = account.getStudentId();
+                String gender = account.getGender();
+                String accountName = account.getAccountName();
+                String pass = account.getPass();
 
-            Account a = new Account(name, studentId, gender, accountName, pass);
-            allAccount.add(a);
+                Account a = new Account(name, studentId, gender, accountName, pass);
+                allAccount.add(a);
+            }
         }
+        else {
+            Account account = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
+            allAccount.add(account);
+            String json = gson.toJson(allAccount);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+            printWriter.println(json);
 
+            reader.close();
+            printWriter.close();
+        }
 
 //        if (male.isArmed() && female.isCache()) sex = "male";
 //        else if (male.isCache() && female.isArmed()) sex = "female";
 //        else throw new IllegalArgumentException("เลือกเพศ");
-        Account account = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
-        allAccount.add(account);
-        String json = gson.toJson(allAccount);
-        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
-        printWriter.println(json);
 
-        reader.close();
-        printWriter.close();
 
         Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene regisView = new Scene(regis, 330, 310);
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         window.setScene(regisView);
         window.show();
+    }
+
+    public static String getUserPass() {
+        return UserPass;
+    }
+
+    public static void setUserPass(String userPass) {
+        UserPass = userPass;
+    }
+
+    public static String getStudentIdPass() {
+        return studentIdPass;
     }
 }

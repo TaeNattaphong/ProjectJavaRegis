@@ -9,26 +9,61 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 
 public class Homepage {
 //    @FXML private Label labelName, labelNum;
     @FXML private Button class1, class2, class3, class4, accountButton;
     @FXML private VBox vboxTeam1, vboxTeam2;
+    private DataAccSub user;
+
 
     @FXML
-    public void initialize() throws FileNotFoundException {
+    public void initialize() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("DataColorSub.json"));
         Gson gson = new Gson();
-        BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
         JsonArray array = gson.fromJson(reader, JsonArray.class);
-        JsonElement element = array.get(0);
-        Account account = gson.fromJson(element, Account.class);
+        ArrayList<DataAccSub> allDataAccSub = new ArrayList<>();
+        if (array != null) {
+            for (int i = 0; i < array.size(); i++) {
+                JsonElement element = array.get(i);
+                DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
+                if (LoginController.getUserPass().equals(dataAccSub.getUser())) {
+                    user = dataAccSub;
+                    break;
+                }
+            }
+        }
+        else {
+            DataAccSub d = createDataAccSub(LoginController.getUserPass());
+            allDataAccSub.add(d);
+            String json = gson.toJson(allDataAccSub);
+            PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
+            printWriter.println(json);
+
+            reader.close();
+            printWriter.close();
+            user = d;
+        }
     }
+
+    public DataAccSub createDataAccSub(String user) {
+        DataAccSub dataAccSub = new DataAccSub(user , new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
+                new PassColorSub(5), new PassColorSub(6), new PassColorSub(7), new PassColorSub(8), new PassColorSub(9),
+                new PassColorSub(10), new PassColorSub(11), new PassColorSub(12), new PassColorSub(13), new PassColorSub(14),
+                new PassColorSub(15), new PassColorSub(16), new PassColorSub(17), new PassColorSub(18), new PassColorSub(19),
+                new PassColorSub(20), new PassColorSub(21), new PassColorSub(22), new PassColorSub(23), new PassColorSub(24),
+                new PassColorSub(25), new PassColorSub(26), new PassColorSub(27), new PassColorSub(28), new PassColorSub(29),
+                new PassColorSub(30), new PassColorSub(31), new PassColorSub(32), new PassColorSub(33), new PassColorSub(34),
+                new PassColorSub(35), new PassColorSub(36), new PassColorSub(37), new PassColorSub(38), new PassColorSub(39),
+                new PassColorSub(40), new PassColorSub(41), new PassColorSub(42), new PassColorSub(43), new PassColorSub(44),
+                new PassColorSub(45), new PassColorSub(46));
+        return dataAccSub;
+    }
+
+
 
     public void setColorButtonClass(Button aClass, Button bClass, Button cClass, Button dClass, Button eClass) {
         aClass.setStyle("-fx-background-color: #373737;");
@@ -104,6 +139,6 @@ public class Homepage {
 
     @FXML public void onClickAccount(ActionEvent actionEvent) throws IOException {
         setColorButtonClass(accountButton,class1,class2,class3,class4);
-        AlertBox.displayAccount("Account", "Nattaphong", "6010405220", 300, 170, accountButton);
+        AlertBox.displayAccount("Account", LoginController.getUserPass(), LoginController.getStudentIdPass(), 400, 200, accountButton);
     }
 }

@@ -1,7 +1,7 @@
 [
   {
     "name": "admin",
-    "studentId": "1234567890",
+    "studentId": "admin",
     "gender": "male",
     "accountName": "admin",
     "pass": "admin"

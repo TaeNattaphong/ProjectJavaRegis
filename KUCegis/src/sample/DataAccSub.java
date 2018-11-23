@@ -1,6 +1,7 @@
 package sample;
 
 public class DataAccSub {
+    private String user;
     protected PassColorSub calI;
     protected PassColorSub fundPCon;
     protected PassColorSub intro;
@@ -55,7 +56,11 @@ public class DataAccSub {
     protected PassColorSub majorElectivesVI;
     protected PassColorSub freeElectivesII;
 
-    public DataAccSub(PassColorSub calI, PassColorSub fundPCon, PassColorSub intro,
+    public String getUser() {
+        return user;
+    }
+
+    public DataAccSub(String user, PassColorSub calI, PassColorSub fundPCon, PassColorSub intro,
                       PassColorSub digital, PassColorSub knowledge, PassColorSub language1,
                       PassColorSub thai, PassColorSub calII, PassColorSub comPro,
                       PassColorSub fundofCom, PassColorSub gym, PassColorSub entrepreneurship,
@@ -71,6 +76,7 @@ public class DataAccSub {
                       PassColorSub freeElectivesI, PassColorSub coopEducation, PassColorSub csProject,
                       PassColorSub majorElectivesIV, PassColorSub majorElectivesV, PassColorSub majorElectivesVI,
                       PassColorSub freeElectivesII) {
+        this.user = user;
         this.calI = calI;
         this.fundPCon = fundPCon;
         this.intro = intro;
@@ -80,7 +86,7 @@ public class DataAccSub {
         this.thai = thai;
         this.calII = calII;
         this.comPro = comPro;
-        FundofCom = fundofCom;
+        this.FundofCom = fundofCom;
         this.gym = gym;
         this.entrepreneurship = entrepreneurship;
         this.thaicitizens = thaicitizens;
@@ -107,7 +113,7 @@ public class DataAccSub {
         this.security = security;
         this.automata = automata;
         this.compiler = compiler;
-        CloudComputing = cloudComputing;
+        this.CloudComputing = cloudComputing;
         this.coop = coop;
         this.majorElectivesIII = majorElectivesIII;
         this.freeElectivesI = freeElectivesI;

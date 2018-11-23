@@ -1,0 +1,419 @@
+[
+  {
+    "user": "adminadmin",
+    "calI": {
+      "id": 1,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "fundPCon": {
+      "id": 2,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "intro": {
+      "id": 3,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "digital": {
+      "id": 4,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "knowledge": {
+      "id": 5,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "language1": {
+      "id": 6,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "thai": {
+      "id": 7,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "calII": {
+      "id": 8,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "comPro": {
+      "id": 9,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "FundofCom": {
+      "id": 10,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "gym": {
+      "id": 11,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "entrepreneurship": {
+      "id": 12,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "thaicitizens": {
+      "id": 13,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "aesthetics": {
+      "id": 14,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "linear": {
+      "id": 15,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "softwareCon": {
+      "id": 16,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "data": {
+      "id": 17,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "stat": {
+      "id": 18,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "iTComputer": {
+      "id": 19,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "happy": {
+      "id": 20,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "science1": {
+      "id": 21,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "database": {
+      "id": 22,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "algorithms": {
+      "id": 23,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "assembly": {
+      "id": 24,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesI": {
+      "id": 25,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "language2": {
+      "id": 26,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "science2": {
+      "id": 27,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "systemAnalysis": {
+      "id": 28,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "os": {
+      "id": 29,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "intellectualProp": {
+      "id": 30,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "seminar1": {
+      "id": 31,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesII": {
+      "id": 32,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "language3": {
+      "id": 33,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "security": {
+      "id": 34,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "automata": {
+      "id": 35,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "compiler": {
+      "id": 36,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "CloudComputing": {
+      "id": 37,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "coop": {
+      "id": 38,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesIII": {
+      "id": 39,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "freeElectivesI": {
+      "id": 40,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "coopEducation": {
+      "id": 41,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "csProject": {
+      "id": 42,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesIV": {
+      "id": 43,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesV": {
+      "id": 44,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "majorElectivesVI": {
+      "id": 45,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    },
+    "freeElectivesII": {
+      "id": 46,
+      "colorSub": {
+        "red": 0.6627451,
+        "green": 0.6627451,
+        "blue": 0.6627451,
+        "opacity": 1.0
+      }
+    }
+  }
+]
