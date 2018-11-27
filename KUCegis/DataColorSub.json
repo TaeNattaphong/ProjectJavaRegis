@@ -1,419 +1,189 @@
 [
   {
-    "user": "adminadmin",
+    "user": "admin\t\tadmin",
     "calI": {
       "id": 1,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "red"
     },
     "fundPCon": {
       "id": 2,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "red"
     },
     "intro": {
       "id": 3,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "red"
     },
     "digital": {
       "id": 4,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "knowledge": {
       "id": 5,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "language1": {
       "id": 6,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "thai": {
       "id": 7,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "calII": {
       "id": 8,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "comPro": {
       "id": 9,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "FundofCom": {
       "id": 10,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "gym": {
       "id": 11,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "entrepreneurship": {
       "id": 12,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "thaicitizens": {
       "id": 13,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "aesthetics": {
       "id": 14,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "linear": {
       "id": 15,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "green"
     },
     "softwareCon": {
       "id": 16,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "green"
     },
     "data": {
       "id": 17,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "stat": {
       "id": 18,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "iTComputer": {
       "id": 19,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "happy": {
       "id": 20,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "science1": {
       "id": 21,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "database": {
       "id": 22,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "algorithms": {
       "id": 23,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "assembly": {
       "id": 24,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "majorElectivesI": {
       "id": 25,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "language2": {
       "id": 26,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "science2": {
       "id": 27,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "systemAnalysis": {
       "id": 28,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "green"
     },
     "os": {
       "id": 29,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "intellectualProp": {
       "id": 30,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "seminar1": {
       "id": 31,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "majorElectivesII": {
       "id": 32,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "language3": {
       "id": 33,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "security": {
       "id": 34,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "automata": {
       "id": 35,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "compiler": {
       "id": 36,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
-    "CloudComputing": {
+    "cloudComputing": {
       "id": 37,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "coop": {
       "id": 38,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "majorElectivesIII": {
       "id": 39,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "freeElectivesI": {
       "id": 40,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "coopEducation": {
       "id": 41,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "red"
     },
     "csProject": {
       "id": 42,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "green"
     },
     "majorElectivesIV": {
       "id": 43,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "majorElectivesV": {
       "id": 44,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "majorElectivesVI": {
       "id": 45,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     },
     "freeElectivesII": {
       "id": 46,
-      "colorSub": {
-        "red": 0.6627451,
-        "green": 0.6627451,
-        "blue": 0.6627451,
-        "opacity": 1.0
-      }
+      "colorSub": "gray"
     }
   }
 ]

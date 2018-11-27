@@ -12,30 +12,28 @@ import java.util.Map;
 
 public class MainClassWriteFile {
     public static void main(String[] args) throws IOException {
-        readFile();
+//        readFile();
 //        writeFile();
-//        write();
+        write();
     }
 
     private static void readFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("DataColorSub.json"));
-        Gson gson = new Gson();
-        JsonArray array = gson.fromJson(reader, JsonArray.class);
+        BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
+        Gson gsonColor = new Gson();
+        JsonArray arrayColor = gsonColor.fromJson(readerColor, JsonArray.class);
         ArrayList<DataAccSub> all = new ArrayList<>();
-        for (int i = 0; i < array.size(); i++) {
-            JsonElement element = array.get(i);
-            DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
+        for (int i = 0; i < arrayColor.size(); i++) {
+            JsonElement element = arrayColor.get(i);
+            DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
             DataAccSub a = dataAccSub;
             System.out.println(a.getUser());
             all.add(a);
         }
-//        Account a = new Account("Tae", "MK", "admin1234", "mk@hotmail", "fg");
-//        all.add(a);
-        String json = gson.toJson(all);
-        PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+        String json = gsonColor.toJson(all);
+        PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
         printWriter.println(json);
 
-        reader.close();
+        readerColor.close();
         printWriter.close();
     }
 

@@ -1,29 +1,23 @@
 package sample;
 
-import javafx.scene.paint.Color;
-
 public class PassColorSub {
     private int id;
-    private Color colorSub;
+    private String colorSub;
 
     public PassColorSub(int id) {
         this.id = id;
-        this.colorSub = Color.DARKGREY;
+        this.colorSub = "gray";
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Color getColorSub() {
+    public String getColorSub() {
         return colorSub;
     }
 
-    public void setColorSub(Color colorSub) {
+    public void setColorSub(String colorSub) {
         this.colorSub = colorSub;
     }
 }

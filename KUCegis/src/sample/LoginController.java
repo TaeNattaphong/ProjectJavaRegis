@@ -41,7 +41,7 @@ public class LoginController {
         String pass = passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
-        setUserPass(user + pass);
+        setUserPass(user +"\t\t"+ pass);
         studentIdPass = pass;
 
         boolean isUser = false;
@@ -71,7 +71,16 @@ public class LoginController {
         Gson gson = new Gson();
         JsonArray array = gson.fromJson(reader, JsonArray.class);
         ArrayList<Account> allAccount = new ArrayList<>();
-        if (array != null) {
+        if (array == null) {
+                Account account = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
+                allAccount.add(account);
+                String json = gson.toJson(allAccount);
+                PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+                printWriter.println(json);
+
+                reader.close();
+                printWriter.close();
+        } else{
             for (int i = 0; i < array.size(); i++) {
                 JsonElement element = array.get(i);
                 Account account = gson.fromJson(element, Account.class);
@@ -80,14 +89,11 @@ public class LoginController {
                 String gender = account.getGender();
                 String accountName = account.getAccountName();
                 String pass = account.getPass();
-
                 Account a = new Account(name, studentId, gender, accountName, pass);
                 allAccount.add(a);
             }
-        }
-        else {
-            Account account = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
-            allAccount.add(account);
+            Account a = new Account(name.getText(), studentId.getText(), "male", accountName.getText(), pass.getText());
+            allAccount.add(a);
             String json = gson.toJson(allAccount);
             PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
             printWriter.println(json);

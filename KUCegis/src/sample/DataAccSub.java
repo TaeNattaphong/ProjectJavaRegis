@@ -2,62 +2,159 @@ package sample;
 
 public class DataAccSub {
     private String user;
-    protected PassColorSub calI;
-    protected PassColorSub fundPCon;
-    protected PassColorSub intro;
-    protected PassColorSub digital;
-    protected PassColorSub knowledge;
-    protected PassColorSub language1;
-    protected PassColorSub thai;
+    private PassColorSub calI;
+    private PassColorSub fundPCon;
+    private PassColorSub intro;
+    private PassColorSub digital;
+    private PassColorSub knowledge;
+    private PassColorSub language1;
+    private PassColorSub thai;
 
-    protected PassColorSub calII;
-    protected PassColorSub comPro;
-    protected PassColorSub FundofCom;
-    protected PassColorSub gym;
-    protected PassColorSub entrepreneurship;
-    protected PassColorSub thaicitizens;
-    protected PassColorSub aesthetics;
+    private PassColorSub calII;
+    private PassColorSub comPro;
+    private PassColorSub FundofCom;
+    private PassColorSub gym;
+    private PassColorSub entrepreneurship;
+    private PassColorSub thaicitizens;
+    private PassColorSub aesthetics;
 
-    protected PassColorSub linear;
-    protected PassColorSub softwareCon;
-    protected PassColorSub data;
-    protected PassColorSub stat;
-    protected PassColorSub iTComputer;
-    protected PassColorSub happy;
-    protected PassColorSub science1;
+    private PassColorSub linear;
+    private PassColorSub softwareCon;
+    private PassColorSub data;
+    private PassColorSub stat;
+    private PassColorSub iTComputer;
+    private PassColorSub happy;
+    private PassColorSub science1;
 
-    protected PassColorSub database;
-    protected PassColorSub algorithms;
-    protected PassColorSub assembly;
-    protected PassColorSub majorElectivesI;
-    protected PassColorSub language2;
-    protected PassColorSub science2;
+    private PassColorSub database;
+    private PassColorSub algorithms;
+    private PassColorSub assembly;
+    private PassColorSub majorElectivesI;
+    private PassColorSub language2;
+    private PassColorSub science2;
 
-    protected PassColorSub systemAnalysis;
-    protected PassColorSub os;
-    protected PassColorSub intellectualProp;
-    protected PassColorSub seminar1;
-    protected PassColorSub majorElectivesII;
-    protected PassColorSub language3;
+    private PassColorSub systemAnalysis;
+    private PassColorSub os;
+    private PassColorSub intellectualProp;
+    private PassColorSub seminar1;
+    private PassColorSub majorElectivesII;
+    private PassColorSub language3;
 
-    protected PassColorSub security;
-    protected PassColorSub automata;
-    protected PassColorSub compiler;
-    protected PassColorSub CloudComputing;
-    protected PassColorSub coop;
-    protected PassColorSub majorElectivesIII;
-    protected PassColorSub freeElectivesI;
+    private PassColorSub security;
+    private PassColorSub automata;
+    private PassColorSub compiler;
+    private PassColorSub cloudComputing;
+    private PassColorSub coop;
+    private PassColorSub majorElectivesIII;
+    private PassColorSub freeElectivesI;
 
-    protected PassColorSub coopEducation;
+    private PassColorSub coopEducation;
 
-    protected PassColorSub csProject;
-    protected PassColorSub majorElectivesIV;
-    protected PassColorSub majorElectivesV;
-    protected PassColorSub majorElectivesVI;
-    protected PassColorSub freeElectivesII;
+    private PassColorSub csProject;
+    private PassColorSub majorElectivesIV;
+    private PassColorSub majorElectivesV;
+    private PassColorSub majorElectivesVI;
+    private PassColorSub freeElectivesII;
 
     public String getUser() {
         return user;
+    }
+
+    public PassColorSub getSub(int index) {
+        switch (index) {
+            case 1:
+                return calI;
+            case 2:
+                return fundPCon;
+            case 3:
+                return intro;
+            case 4:
+                return digital;
+            case 5:
+                return knowledge;
+            case 6:
+                return language1;
+            case 7:
+                return thai;
+            case 8:
+                return calII;
+            case 9:
+                return comPro;
+            case 10:
+                return FundofCom;
+            case 11:
+                return gym;
+            case 12:
+                return entrepreneurship;
+            case 13:
+                return thaicitizens;
+            case 14:
+                return aesthetics;
+            case 15:
+                return linear;
+            case 16:
+                return softwareCon;
+            case 17:
+                return data;
+            case 18:
+                return stat;
+            case 19:
+                return iTComputer;
+            case 20:
+                return happy;
+            case 21:
+                return science1;
+            case 22:
+                return database;
+            case 23:
+                return algorithms;
+            case 24:
+                return assembly;
+            case 25:
+                return majorElectivesI;
+            case 26:
+                return language2;
+            case 27:
+                return science2;
+            case 28:
+                return systemAnalysis;
+            case 29:
+                return os;
+            case 30:
+                return intellectualProp;
+            case 31:
+                return seminar1;
+            case 32:
+                return majorElectivesII;
+            case 33:
+                return language3;
+            case 34:
+                return security;
+            case 35:
+                return automata;
+            case 36:
+                return compiler;
+            case 37:
+                return cloudComputing;
+            case 38:
+                return coop;
+            case 39:
+                return majorElectivesIII;
+            case 40:
+                return freeElectivesI;
+            case 41:
+                return coopEducation;
+            case 42:
+                return csProject;
+            case 43:
+                return majorElectivesIV;
+            case 44:
+                return majorElectivesV;
+            case 45:
+                return majorElectivesVI;
+            case 46:
+                return freeElectivesII;
+        }return null;
     }
 
     public DataAccSub(String user, PassColorSub calI, PassColorSub fundPCon, PassColorSub intro,
@@ -113,7 +210,7 @@ public class DataAccSub {
         this.security = security;
         this.automata = automata;
         this.compiler = compiler;
-        this.CloudComputing = cloudComputing;
+        this.cloudComputing = cloudComputing;
         this.coop = coop;
         this.majorElectivesIII = majorElectivesIII;
         this.freeElectivesI = freeElectivesI;
