@@ -63,6 +63,7 @@
             <Button fx:id="class2" layoutY="119.0" mnemonicParsing="false" onAction="#setClass2" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 2" textFill="WHITE" />
             <Button fx:id="class3" layoutY="178.0" mnemonicParsing="false" onAction="#setClass3" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 3" textFill="WHITE" />
             <Button fx:id="class4" layoutY="237.0" mnemonicParsing="false" onAction="#setClass4" prefHeight="59.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="ปี 4" textFill="WHITE" />
+            <Button fx:id="logoutBun" layoutY="416.0" mnemonicParsing="false" onAction="#onCilckLogout" prefHeight="46.0" prefWidth="180.0" style="-fx-background-color: #404040;" text="Logout" textFill="WHITE" />
          </children>
       </AnchorPane>
   </items>

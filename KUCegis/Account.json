@@ -1,9 +1,1 @@
-[
-  {
-    "name": "admin",
-    "studentId": "admin",
-    "gender": "male",
-    "accountName": "admin",
-    "pass": "admin"
-  }
-]
+[{"name":"a","studentId":"a","gender":"ชาย","accountName":"a","pass":"a"},{"name":"s","studentId":"s","gender":"ชาย","accountName":"s","pass":"s"}]

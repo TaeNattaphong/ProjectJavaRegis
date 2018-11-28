@@ -5,55 +5,22 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
 import java.io.*;
 import java.util.ArrayList;
-
 import static javafx.scene.paint.Color.*;
 
-
 public class Homepage {
-    @FXML private Button class1, class2, class3, class4, accountButton;
+    @FXML private Button class1, class2, class3, class4, accountButton, logoutBun;
     @FXML private VBox vboxTeam1, vboxTeam2;
-
-    @FXML
-    public void initialize() throws IOException {  //บัคตรงนี้เดี๋ยวแก้
-        BufferedReader reader = new BufferedReader(new FileReader("DataColorSub.json"));
-        Gson gsonColor = new Gson();
-        JsonArray arrayColor = gsonColor.fromJson(reader, JsonArray.class);
-        ArrayList<DataAccSub> allDataAccSub = new ArrayList<>();
-        if (arrayColor == null) {
-
-            DataAccSub d = createDataAccSub(LoginController.getUserPass());
-            allDataAccSub.add(d);
-
-            String json = gsonColor.toJson(allDataAccSub);
-
-            PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
-            printWriter.println(json);
-
-            reader.close();
-            printWriter.close();
-        }
-        else {
-            for (int i = 0; i < arrayColor.size(); i++) {
-                JsonElement element = arrayColor.get(i);
-                DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
-                allDataAccSub.add(dataAccSub);
-            }
-            DataAccSub a = createDataAccSub(LoginController.getUserPass());
-            allDataAccSub.add(a);
-            String json = gsonColor.toJson(allDataAccSub);
-            PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
-            printWriter.println(json);
-
-            reader.close();
-            printWriter.close();
-
-        }
-    }
 
     public void creatButtonSubject(BufferedReader reader, VBox vbox) throws FileNotFoundException {
         Gson gson = new Gson();
@@ -112,6 +79,7 @@ public class Homepage {
         }
     }
 
+
     public void setColorInFile(String color, int passSub) throws IOException {
         BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
         Gson gsonColor = new Gson();
@@ -129,6 +97,14 @@ public class Homepage {
 
         readerColor.close();
         printWriter.close();
+    }
+
+    public void onCilckLogout(ActionEvent actionEvent) throws IOException {
+        Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene regisView = new Scene(regis, 330, 310);
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(regisView);
+        window.show();
     }
 
     public void setColorButtonClass(Button aClass, Button bClass, Button cClass, Button dClass, Button eClass) {
@@ -178,19 +154,5 @@ public class Homepage {
     @FXML public void onClickAccount(ActionEvent actionEvent) throws IOException {
         setColorButtonClass(accountButton,class1,class2,class3,class4);
         AlertBox.displayAccount("Account", LoginController.getUserPass(), LoginController.getStudentIdPass(), 400, 200, accountButton);
-    }
-
-    public DataAccSub createDataAccSub(String user) {
-        DataAccSub dataAccSub = new DataAccSub(user , new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
-                new PassColorSub(5), new PassColorSub(6), new PassColorSub(7), new PassColorSub(8), new PassColorSub(9),
-                new PassColorSub(10), new PassColorSub(11), new PassColorSub(12), new PassColorSub(13), new PassColorSub(14),
-                new PassColorSub(15), new PassColorSub(16), new PassColorSub(17), new PassColorSub(18), new PassColorSub(19),
-                new PassColorSub(20), new PassColorSub(21), new PassColorSub(22), new PassColorSub(23), new PassColorSub(24),
-                new PassColorSub(25), new PassColorSub(26), new PassColorSub(27), new PassColorSub(28), new PassColorSub(29),
-                new PassColorSub(30), new PassColorSub(31), new PassColorSub(32), new PassColorSub(33), new PassColorSub(34),
-                new PassColorSub(35), new PassColorSub(36), new PassColorSub(37), new PassColorSub(38), new PassColorSub(39),
-                new PassColorSub(40), new PassColorSub(41), new PassColorSub(42), new PassColorSub(43), new PassColorSub(44),
-                new PassColorSub(45), new PassColorSub(46));
-        return dataAccSub;
     }
 }

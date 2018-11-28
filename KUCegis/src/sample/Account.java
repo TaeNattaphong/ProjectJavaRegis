@@ -19,12 +19,12 @@ public class Account {
         return name;
     }
 
-    public String getStudentId() {
-        return studentId;
-    }
-
     public String getGender() {
         return gender;
+    }
+
+    public String getStudentId() {
+        return studentId;
     }
 
     public String getAccountName() {
