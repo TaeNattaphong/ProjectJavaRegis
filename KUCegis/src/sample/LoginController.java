@@ -156,7 +156,7 @@ public class LoginController {
     }
 
     public DataAccSub createDataAccSub(String user) {
-        DataAccSub dataAccSub = new DataAccSub(user , new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
+        DataAccSub dataAccSub = new DataAccSub(user ,new PassColorSub(0), new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
                 new PassColorSub(5), new PassColorSub(6), new PassColorSub(7), new PassColorSub(8), new PassColorSub(9),
                 new PassColorSub(10), new PassColorSub(11), new PassColorSub(12), new PassColorSub(13), new PassColorSub(14),
                 new PassColorSub(15), new PassColorSub(16), new PassColorSub(17), new PassColorSub(18), new PassColorSub(19),

@@ -2,6 +2,7 @@ package sample;
 
 public class DataAccSub {
     private String user;
+    private PassColorSub zero;
     private PassColorSub calI;
     private PassColorSub fundPCon;
     private PassColorSub intro;
@@ -62,6 +63,8 @@ public class DataAccSub {
 
     public PassColorSub getSub(int index) {
         switch (index) {
+            case 0:
+                return zero;
             case 1:
                 return calI;
             case 2:
@@ -157,7 +160,7 @@ public class DataAccSub {
         }return null;
     }
 
-    public DataAccSub(String user, PassColorSub calI, PassColorSub fundPCon, PassColorSub intro,
+    public DataAccSub(String user, PassColorSub zero,PassColorSub calI, PassColorSub fundPCon, PassColorSub intro,
                       PassColorSub digital, PassColorSub knowledge, PassColorSub language1,
                       PassColorSub thai, PassColorSub calII, PassColorSub comPro,
                       PassColorSub fundofCom, PassColorSub gym, PassColorSub entrepreneurship,
@@ -173,7 +176,9 @@ public class DataAccSub {
                       PassColorSub freeElectivesI, PassColorSub coopEducation, PassColorSub csProject,
                       PassColorSub majorElectivesIV, PassColorSub majorElectivesV, PassColorSub majorElectivesVI,
                       PassColorSub freeElectivesII) {
+
         this.user = user;
+        this.zero = zero;
         this.calI = calI;
         this.fundPCon = fundPCon;
         this.intro = intro;

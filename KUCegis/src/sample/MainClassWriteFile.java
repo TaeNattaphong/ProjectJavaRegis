@@ -39,7 +39,7 @@ public class MainClassWriteFile {
 
     private static void write() throws IOException {
         ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
-        dataAccSubs.add(new DataAccSub("adminadmin" , new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
+        dataAccSubs.add(new DataAccSub("adminadmin" ,new PassColorSub(0), new PassColorSub(1), new PassColorSub(2), new PassColorSub(3), new PassColorSub(4),
                 new PassColorSub(5), new PassColorSub(6), new PassColorSub(7), new PassColorSub(8), new PassColorSub(9),
                 new PassColorSub(10), new PassColorSub(11), new PassColorSub(12), new PassColorSub(13), new PassColorSub(14),
                 new PassColorSub(15), new PassColorSub(16), new PassColorSub(17), new PassColorSub(18), new PassColorSub(19),
@@ -60,6 +60,7 @@ public class MainClassWriteFile {
     private static void writeFile() throws IOException {
 
         ArrayList<Subject> team1Pee1 = new ArrayList<>();
+        team1Pee1.add(new Subject("0","0",0,Color.RED,0,0,0));
         team1Pee1.add(new Subject("01417111","Calculus I",3, Color.RED, 1, 0, 0));
         team1Pee1.add(new Subject("01418112","Fund. Programming Concepts",3, Color.RED, 2, 0, 0));
         team1Pee1.add(new Subject("01418114", "Intro. to Computer Science", 2, Color.RED, 3, 0, 0));

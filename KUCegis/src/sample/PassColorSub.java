@@ -3,19 +3,19 @@ package sample;
 public class PassColorSub {
     private int id;
     private String colorSub;
-    private boolean study;
+    private String study;
 
     public PassColorSub(int id) {
         this.id = id;
         this.colorSub = "gray";
-        this.study = false;
+        this.study = "false";
     }
 
-    public boolean isStudy() {
+    public String isStudy() {
         return study;
     }
 
-    public void setStudy(boolean study) {
+    public void setStudy(String study) {
         this.study = study;
     }
 
