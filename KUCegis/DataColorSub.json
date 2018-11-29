@@ -8,8 +8,8 @@
     },
     "fundPCon": {
       "id": 2,
-      "colorSub": "red",
-      "study": true
+      "colorSub": "gray",
+      "study": false
     },
     "intro": {
       "id": 3,
