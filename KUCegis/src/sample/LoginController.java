@@ -39,7 +39,7 @@ public class LoginController {
         String pass = passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
-        setUserPass(user +"\t\t"+ pass);
+        setUserPass(user +"\t"+ pass);
         studentIdPass = pass;
 
         boolean isUser = false;
@@ -79,7 +79,7 @@ public class LoginController {
 
         if (array == null || arrayColor == null) {
             Account account = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-            DataAccSub accSub = createDataAccSub(accountName.getText()+"\t\t"+pass.getText());
+            DataAccSub accSub = createDataAccSub(accountName.getText()+"\t"+pass.getText());
 
             allAccount.add(account);
             allDataSub.add(accSub);
@@ -108,7 +108,7 @@ public class LoginController {
                 allDataSub.add(accSub);
             }
             Account a = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-            DataAccSub d = createDataAccSub(accountName.getText()+"\t\t"+pass.getText());
+            DataAccSub d = createDataAccSub(accountName.getText()+"\t"+pass.getText());
 
             allAccount.add(a);
             allDataSub.add(d);

@@ -11,6 +11,10 @@ public class PassColorSub {
         this.study = false;
     }
 
+    public boolean isStudy() {
+        return study;
+    }
+
     public void setStudy(boolean study) {
         this.study = study;
     }

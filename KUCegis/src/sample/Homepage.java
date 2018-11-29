@@ -29,23 +29,25 @@ public class Homepage {
         for(int i = 0 ; i < array.size() ; i++) {
             JsonElement element1 = array.get(i);
             Subject subject = gson.fromJson(element1, Subject.class);
+
             MenuButton button = new MenuButton(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")");
-            MenuItem item1 = new MenuItem("                                                  ลงเรียนแล้ว                                              ");
-            MenuItem item2 = new MenuItem("                                                 ยังไม่ได้ลงเรียน                                              ");
+
+            MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
+            MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
             button.getItems().addAll(item1, item2);
             item1.setOnAction(e -> {
                 button.setStyle("-fx-background-color: #006e0a;");
-                button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ลงเรียนแล้ว");
+                button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ผ่าน");
                 try {
-                    setColorInFile("green", subject.getPassSub());
+                    setColorInFile("green", subject);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             });
-            item2.setOnAction(e -> {button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ยังไม่ได้ลงเรียน");
+            item2.setOnAction(e -> {button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " +"(" +subject.getSubjectcredit() + ")" + "           ไม่ผ่าน");
             button.setStyle("-fx-background-color: #6e0200;");
                 try {
-                    setColorInFile("red", subject.getPassSub());
+                    setColorInFile("red", subject);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -80,7 +82,7 @@ public class Homepage {
     }
 
 
-    public void setColorInFile(String color, int passSub) throws IOException {
+    public void setColorInFile(String color, Subject subject) throws IOException {
         BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
         Gson gsonColor = new Gson();
         JsonArray arrayColor = gsonColor.fromJson(readerColor, JsonArray.class);
@@ -89,9 +91,12 @@ public class Homepage {
             JsonElement element = arrayColor.get(i);
             DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
             if (LoginController.getUserPass().equals(dataAccSub.getUser())) {
-                dataAccSub.getSub(passSub).setColorSub(color);
-                if (color.equals("green")) dataAccSub.getSub(passSub).setStudy(true);
-            }all.add(dataAccSub);
+                dataAccSub.getSub(subject.getPassSub()).setColorSub(color);
+                if (color.equals("green")) {
+                    dataAccSub.getSub(subject.getPassSub()).setStudy(true);
+                }
+            }
+            all.add(dataAccSub);
         }
         String json = gsonColor.toJson(all);
         PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));

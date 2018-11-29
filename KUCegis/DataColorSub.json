@@ -1,6 +1,6 @@
 [
   {
-    "user": "a\t\ta",
+    "user": "a\ta",
     "calI": {
       "id": 1,
       "colorSub": "green",
@@ -9,12 +9,12 @@
     "fundPCon": {
       "id": 2,
       "colorSub": "red",
-      "study": false
+      "study": true
     },
     "intro": {
       "id": 3,
-      "colorSub": "green",
-      "study": true
+      "colorSub": "gray",
+      "study": false
     },
     "digital": {
       "id": 4,
