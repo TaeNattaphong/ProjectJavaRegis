@@ -3,10 +3,16 @@ package sample;
 public class PassColorSub {
     private int id;
     private String colorSub;
+    private boolean study;
 
     public PassColorSub(int id) {
         this.id = id;
         this.colorSub = "gray";
+        this.study = false;
+    }
+
+    public void setStudy(boolean study) {
+        this.study = study;
     }
 
     public int getId() {

@@ -88,8 +88,10 @@ public class Homepage {
         for (int i = 0; i < arrayColor.size(); i++) {
             JsonElement element = arrayColor.get(i);
             DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
-            if (LoginController.getUserPass().equals(dataAccSub.getUser())) dataAccSub.getSub(passSub).setColorSub(color);
-            all.add(dataAccSub);
+            if (LoginController.getUserPass().equals(dataAccSub.getUser())) {
+                dataAccSub.getSub(passSub).setColorSub(color);
+                if (color.equals("green")) dataAccSub.getSub(passSub).setStudy(true);
+            }all.add(dataAccSub);
         }
         String json = gsonColor.toJson(all);
         PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
