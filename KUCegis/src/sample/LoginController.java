@@ -66,66 +66,61 @@ public class LoginController {
 
     public void onClickRegisOk(ActionEvent actionEvent) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
-        BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
-
-        Gson gsonColor = new Gson();
         Gson gson = new Gson();
-
         JsonArray array = gson.fromJson(reader, JsonArray.class);
-        JsonArray arrayColor = gsonColor.fromJson(readerColor, JsonArray.class);
-
-        ArrayList<DataAccSub> allDataSub = new ArrayList<>();
         ArrayList<Account> allAccount = new ArrayList<>();
 
-        if (array == null || arrayColor == null) {
+        if (array == null) {
             Account account = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-            DataAccSub accSub = createDataAccSub(accountName.getText()+"\t"+pass.getText());
 
             allAccount.add(account);
-            allDataSub.add(accSub);
 
             String json = gson.toJson(allAccount);
-            String jsonColor = gsonColor.toJson(allDataSub);
-
             PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
-            PrintWriter printWriterColor = new PrintWriter(new FileWriter("DataColorSub.json"));
             printWriter.println(json);
-            printWriterColor.println(jsonColor);
 
             reader.close();
-            readerColor.close();
             printWriter.close();
+
+            ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
+            dataAccSubs.add(createDataAccSub(name.getText()));
+            Gson gsonColor = new Gson();
+            String jsonColor = gsonColor.toJson(dataAccSubs);
+
+            File file = new File(studentId.getText()+".json");
+            FileWriter file1 = new FileWriter(file);
+            PrintWriter printWriterColor = new PrintWriter(file1);
+            printWriterColor.println(jsonColor);
+            printWriterColor.flush();
+            file.createNewFile();
             printWriterColor.close();
         } else{
             for (int i = 0; i < array.size(); i++) {
                 JsonElement element = array.get(i);
-                JsonElement elementColor = arrayColor.get(i);
-
                 Account account = gson.fromJson(element, Account.class);
-                DataAccSub accSub = gsonColor.fromJson(elementColor, DataAccSub.class);
-
                 allAccount.add(account);
-                allDataSub.add(accSub);
             }
             Account a = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-            DataAccSub d = createDataAccSub(accountName.getText()+"\t"+pass.getText());
-
             allAccount.add(a);
-            allDataSub.add(d);
-
             String json = gson.toJson(allAccount);
-            String jsonColor = gsonColor.toJson(allDataSub);
-
             PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
-            PrintWriter printWriterColor = new PrintWriter(new FileWriter("DataColorSub.json"));
-
             printWriter.println(json);
-            printWriterColor.println(jsonColor);
-
             reader.close();
-            readerColor.close();
             printWriter.close();
+
+            ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
+            dataAccSubs.add(createDataAccSub(name.getText()));
+            Gson gsonColor = new Gson();
+            String jsonColor = gsonColor.toJson(dataAccSubs);
+
+            File file = new File(studentId.getText()+".json");
+            FileWriter file1 = new FileWriter(file);
+            PrintWriter printWriterColor = new PrintWriter(file1);
+            printWriterColor.println(jsonColor);
+            printWriterColor.flush();
+            file.createNewFile();
             printWriterColor.close();
+
         }
 
         Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));

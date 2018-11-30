@@ -25,20 +25,16 @@ public class Homepage {
     @FXML private VBox vboxTeam1, vboxTeam2;
 
     public void creatButtonSubject(BufferedReader reader, VBox vbox) throws FileNotFoundException {
-        HashMap<Integer,PassColorSub>   to = new HashMap<>();
-        BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
+        HashMap<Integer,PassColorSub> to = new HashMap<>();
+        BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
         Gson gson = new Gson();
         JsonArray arrayColor = gson.fromJson(readerColor, JsonArray.class);
-
-        for (int i = 0; i < arrayColor.size(); i++) {
-            JsonElement element = arrayColor.get(i);
-            DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
-            for(int ii=0 ;ii<=46;ii++)
-            {
-                    System.out.println(dataAccSub.getSub(ii).getId() + "  " + dataAccSub.getSub(ii).isStudy() + "   " + i);
-                    to.put(dataAccSub.getSub(ii).getId(), dataAccSub.getSub(ii));
-            }
-
+        JsonElement element = arrayColor.get(0);
+        DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
+        for(int ii=0 ;ii<=46;ii++)
+        {
+            System.out.println(dataAccSub.getSub(ii).getId() + "  " + dataAccSub.getSub(ii).isStudy());
+            to.put(dataAccSub.getSub(ii).getId(), dataAccSub.getSub(ii));
         }
         JsonArray array = gson.fromJson(reader, JsonArray.class);
         vbox.getChildren().clear();
@@ -51,10 +47,10 @@ public class Homepage {
                 MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
                 MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
                 button.getItems().addAll(item1, item2);
-                if(to.get(subject.getContinueSub1()).isStudy().equals("false")){
-                    item1.setVisible(false);
-                    item2.setVisible(false);
-                }else {
+//                if(to.get(subject.getContinueSub1()).isStudy().equals("false")){
+//                    item1.setVisible(false);
+//                    item2.setVisible(false);
+//                }else {
                     item1.setOnAction(e -> {
                         button.setStyle("-fx-background-color: #006e0a;");
                         button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ผ่าน");
@@ -73,24 +69,18 @@ public class Homepage {
                             e1.printStackTrace();
                         }
                     });
-                }
+//                }
 
-                for (int ii = 0; ii < arrayColor.size(); ii++) {
-                    JsonElement element = arrayColor.get(ii);
-                    DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
-                    if (LoginController.getUserPass().equals(dataAccSub.getUser())) {
-                        if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("green")) {
-                            button.setStyle("-fx-background-color: #006e0a;");
-                            button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ผ่านแล้ว");
-                        }
-                        if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("red")) {
-                            button.setStyle("-fx-background-color: #6e0200;");
-                            button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ไม่ผ่าน");
-                        }
-                        if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("gray")) {
-                            button.setStyle("-fx-background-color: #4f4f4f");
-                        }
-                    }
+                if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("green")) {
+                    button.setStyle("-fx-background-color: #006e0a;");
+                    button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ผ่านแล้ว");
+                }
+                if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("red")) {
+                    button.setStyle("-fx-background-color: #6e0200;");
+                    button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ไม่ผ่าน");
+                }
+                if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("gray")) {
+                    button.setStyle("-fx-background-color: #4f4f4f");
                 }
                 button.setPrefWidth(500);
                 button.setBorder(new Border(new BorderStroke(subject.getColorSub(), BorderStrokeStyle.SOLID, new CornerRadii(25), new BorderWidths(3))));
@@ -103,26 +93,21 @@ public class Homepage {
 
 
     public void setColorInFile(String color, Subject subject) throws IOException {
-        BufferedReader readerColor = new BufferedReader(new FileReader("DataColorSub.json"));
+        BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
         Gson gsonColor = new Gson();
         JsonArray arrayColor = gsonColor.fromJson(readerColor, JsonArray.class);
         ArrayList<DataAccSub> all = new ArrayList<>();
-        for (int i = 0; i < arrayColor.size(); i++) {
-            JsonElement element = arrayColor.get(i);
-            DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
-            if (LoginController.getUserPass().equals(dataAccSub.getUser())) {
-                dataAccSub.getSub(subject.getPassSub()).setColorSub(color);
-                if (color.equals("green")) {
-                    dataAccSub.getSub(subject.getPassSub()).setStudy("true");
-                }else if(color.equals("red")){
-                    dataAccSub.getSub(subject.getPassSub()).setStudy("false");
-                }
-
-            }
-            all.add(dataAccSub);
+        JsonElement element = arrayColor.get(0);
+        DataAccSub dataAccSub = gsonColor.fromJson(element, DataAccSub.class);
+        dataAccSub.getSub(subject.getPassSub()).setColorSub(color);
+        if (color.equals("green")) {
+            dataAccSub.getSub(subject.getPassSub()).setStudy("true");
+        }else if(color.equals("red")){
+            dataAccSub.getSub(subject.getPassSub()).setStudy("false");
         }
+        all.add(dataAccSub);
         String json = gsonColor.toJson(all);
-        PrintWriter printWriter = new PrintWriter(new FileWriter("DataColorSub.json"));
+        PrintWriter printWriter = new PrintWriter(new FileWriter(LoginController.getStudentIdPass()+".json"));
         printWriter.println(json);
 
         readerColor.close();
