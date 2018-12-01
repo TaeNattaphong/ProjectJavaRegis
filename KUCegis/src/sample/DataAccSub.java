@@ -57,6 +57,7 @@ public class DataAccSub {
     private PassColorSub majorElectivesVI;
     private PassColorSub freeElectivesII;
 
+
     public String getUser() {
         return user;
     }

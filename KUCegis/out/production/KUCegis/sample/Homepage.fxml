@@ -8,19 +8,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.7337192474674384" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="693.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Homepage">
+<SplitPane dividerPositions="0.7337192474674384" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="720.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Homepage">
   <items>
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="200.0" prefHeight="518.0" prefWidth="572.0" style="-fx-background-color: #797979;">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="200.0" prefHeight="462.0" prefWidth="624.0" style="-fx-background-color: #797979;">
          <children>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="462.0" prefWidth="504.0">
               <items>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="219.0" prefWidth="522.0" vbarPolicy="NEVER" SplitPane.resizableWithParent="false">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="219.0" prefWidth="650.0" vbarPolicy="NEVER" SplitPane.resizableWithParent="false">
                      <content>
-                        <VBox prefHeight="219.0" prefWidth="501.0" style="-fx-background-color: #404040;">
+                        <VBox prefHeight="219.0" prefWidth="534.0" style="-fx-background-color: #404040;">
                            <children>
-                              <AnchorPane prefHeight="63.0" prefWidth="503.0">
+                              <AnchorPane prefHeight="63.0" prefWidth="503.0" style="-fx-background-color: #ff0000;">
                                  <children>
-                                    <Label layoutX="60.0" layoutY="15.0" prefHeight="25.0" prefWidth="61.0" text="เทอม1">
+                                    <Label layoutX="32.0" layoutY="8.0" prefHeight="25.0" prefWidth="61.0" text="เทอม1">
                                        <font>
                                           <Font size="22.0" />
                                        </font>
@@ -32,22 +32,22 @@
                         </VBox>
                      </content>
                   </ScrollPane>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="500.0" style="-fx-background-color: #404040;">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="530.0" style="-fx-background-color: #404040;">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="235.0" prefWidth="504.0" vbarPolicy="NEVER">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="235.0" prefWidth="530.0" vbarPolicy="NEVER">
                            <content>
-                              <VBox prefHeight="234.0" prefWidth="498.0" style="-fx-background-color: #404040;">
+                              <VBox prefHeight="234.0" prefWidth="530.0" style="-fx-background-color: #404040;">
                                  <children>
-                                    <AnchorPane prefHeight="63.0" prefWidth="503.0" scaleShape="false">
+                                    <AnchorPane prefHeight="63.0" prefWidth="503.0" scaleShape="false" style="-fx-background-color: #0000ff;">
                                        <children>
-                                          <Label layoutX="62.0" layoutY="17.0" prefHeight="25.0" prefWidth="61.0" text="เทอม2">
+                                          <Label layoutX="30.0" layoutY="7.0" prefHeight="25.0" prefWidth="61.0" text="เทอม2">
                                              <font>
                                                 <Font size="22.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </AnchorPane>
-                                    <VBox fx:id="vboxTeam2" prefHeight="61.0" prefWidth="503.0" />
+                                    <VBox fx:id="vboxTeam2" prefHeight="61.0" prefWidth="530.0" />
                                  </children>
                               </VBox>
                            </content>

@@ -36,4 +36,13 @@ public class PassColorSub {
     public void setColorSub(String colorSub) {
         this.colorSub = colorSub;
     }
+
+    @Override
+    public String toString() {
+        return "PassColorSub{" +
+                "id=" + id +
+                ", colorSub='" + colorSub + '\'' +
+                ", study='" + study + '\'' +
+                '}';
+    }
 }
