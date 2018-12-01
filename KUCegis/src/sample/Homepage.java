@@ -33,7 +33,6 @@ public class Homepage {
         DataAccSub dataAccSub = gson.fromJson(element, DataAccSub.class);
         for(int ii=0 ;ii<=46;ii++)
         {
-            System.out.println(dataAccSub.getSub(ii).getId() + "  " + dataAccSub.getSub(ii).isStudy());
             to.put(dataAccSub.getSub(ii).getId(), dataAccSub.getSub(ii));
         }
         JsonArray array = gson.fromJson(reader, JsonArray.class);
@@ -47,10 +46,10 @@ public class Homepage {
                 MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
                 MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
                 button.getItems().addAll(item1, item2);
-//                if(to.get(subject.getContinueSub1()).isStudy().equals("false")){
-//                    item1.setVisible(false);
-//                    item2.setVisible(false);
-//                }else {
+                if(to.get(subject.getContinueSub1()).isStudy().equals("false")){
+                    item1.setVisible(false);
+                    item2.setVisible(false);
+                }else {
                     item1.setOnAction(e -> {
                         button.setStyle("-fx-background-color: #006e0a;");
                         button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ผ่าน");
@@ -69,7 +68,7 @@ public class Homepage {
                             e1.printStackTrace();
                         }
                     });
-//                }
+                }
 
                 if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("green")) {
                     button.setStyle("-fx-background-color: #006e0a;");
@@ -109,7 +108,6 @@ public class Homepage {
         String json = gsonColor.toJson(all);
         PrintWriter printWriter = new PrintWriter(new FileWriter(LoginController.getStudentIdPass()+".json"));
         printWriter.println(json);
-
         readerColor.close();
         printWriter.close();
     }

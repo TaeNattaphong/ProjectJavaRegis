@@ -14,7 +14,7 @@
          <children>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="462.0" prefWidth="504.0">
               <items>
-                  <ScrollPane prefHeight="219.0" prefWidth="522.0" SplitPane.resizableWithParent="false">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="219.0" prefWidth="522.0" vbarPolicy="NEVER" SplitPane.resizableWithParent="false">
                      <content>
                         <VBox prefHeight="219.0" prefWidth="501.0" style="-fx-background-color: #404040;">
                            <children>
@@ -34,7 +34,7 @@
                   </ScrollPane>
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="500.0" style="-fx-background-color: #404040;">
                      <children>
-                        <ScrollPane prefHeight="235.0" prefWidth="504.0">
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="235.0" prefWidth="504.0" vbarPolicy="NEVER">
                            <content>
                               <VBox prefHeight="234.0" prefWidth="498.0" style="-fx-background-color: #404040;">
                                  <children>

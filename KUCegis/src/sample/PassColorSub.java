@@ -8,10 +8,16 @@ public class PassColorSub {
     public PassColorSub(int id) {
         this.id = id;
         this.colorSub = "gray";
-        this.study = "false";
+        if(id == 0){
+            this.study = "true";
+        }else{
+            this.study = "false";
+        }
     }
 
     public String isStudy() {
+        if(id == 0)
+        this.study = "true";
         return study;
     }
 
