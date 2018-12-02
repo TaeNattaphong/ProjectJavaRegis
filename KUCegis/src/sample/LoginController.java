@@ -40,7 +40,7 @@ public class LoginController {
         userLogin.setText("");
         passLogin.setText("");
         setUserPass(user +"\t"+ pass);
-        studentIdPass = pass;
+
 
         boolean isUser = false;
         BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
@@ -51,7 +51,10 @@ public class LoginController {
             JsonElement element = array.get(i);
             Account account = gson.fromJson(element, Account.class);
 
-            if (user.equals(account.getAccountName()) && pass.equals(account.getPass())) isUser = true;
+            if (user.equals(account.getAccountName()) && pass.equals(account.getPass())) {
+                studentIdPass =  account.getStudentId() ;
+                isUser = true;
+            }
         }
         reader.close();
 
@@ -129,6 +132,8 @@ public class LoginController {
         window.setScene(regisView);
         window.show();
     }
+
+
 
     public static String getUserPass() {
         return UserPass;

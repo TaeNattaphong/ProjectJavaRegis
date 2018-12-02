@@ -42,6 +42,7 @@ public class Homepage {
     }
 
     public void creatButtonSubject(BufferedReader reader, VBox vbox, int numClass) throws FileNotFoundException {
+        System.out.println(LoginController.getStudentIdPass());
         BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
         Gson gson = new Gson();
         JsonArray arrayColor = gson.fromJson(readerColor, JsonArray.class);
@@ -57,7 +58,8 @@ public class Homepage {
             Subject subject = gson.fromJson(element1, Subject.class);
 
             if (subject.getPassSub() != 0) {
-                MenuButton button = new MenuButton(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")");
+                MenuButton button = new MenuButton(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   "
+                        + "(" + subject.getSubjectcredit() + ")"  );
                 MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
                 MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
                 button.getItems().addAll(item1, item2);
