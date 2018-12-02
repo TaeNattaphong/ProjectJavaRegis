@@ -67,10 +67,10 @@ public class AlertBox {
 
         GridPane layout = new GridPane();
         layout.add(new Label("   "), 0, 0);
-        layout.add(new Label("           "), 0, 1);
+        layout.add(new Label("       "), 0, 1);
         layout.add(label, 1, 1);
-        layout.add(new Label("           "), 1, 2);
-        layout.add(new Label("           "), 0, 3);
+        layout.add(new Label("       "), 1, 2);
+        layout.add(new Label("       "), 0, 3);
         layout.add(label1, 1, 3);
         layout.add(new Label("  "), 1, 4);
         layout.add(button, 2, 4);

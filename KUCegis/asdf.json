@@ -1,6 +1,6 @@
 [
   {
-    "user": "natthapong runguang",
+    "user": "asdf",
     "zero": {
       "id": 0,
       "colorSub": "gray",
@@ -8,8 +8,8 @@
     },
     "calI": {
       "id": 1,
-      "colorSub": "gray",
-      "study": "false"
+      "colorSub": "green",
+      "study": "true"
     },
     "fundPCon": {
       "id": 2,
@@ -18,8 +18,8 @@
     },
     "intro": {
       "id": 3,
-      "colorSub": "gray",
-      "study": "false"
+      "colorSub": "green",
+      "study": "true"
     },
     "digital": {
       "id": 4,
@@ -28,7 +28,7 @@
     },
     "knowledge": {
       "id": 5,
-      "colorSub": "gray",
+      "colorSub": "red",
       "study": "false"
     },
     "language1": {

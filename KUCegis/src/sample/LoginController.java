@@ -39,32 +39,48 @@ public class LoginController {
         String pass = passLogin.getText();
         userLogin.setText("");
         passLogin.setText("");
-        setUserPass(user +"\t"+ pass);
 
+        if (user.equals("") || pass.equals("")) AlertBox.display("WARNING!!!", "ใส่ข้อมูลให้ครบถ้วน!!!", 300, 250);
+        else {
+            boolean isUser = false;
+            BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
+            Gson gson = new Gson();
+            JsonArray array = gson.fromJson(reader, JsonArray.class);
 
-        boolean isUser = false;
-        BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
-        Gson gson = new Gson();
-        JsonArray array = gson.fromJson(reader, JsonArray.class);
+            try {
+                for (int i = 0 ; i < array.size() ; i++) {
+                    JsonElement element = array.get(i);
+                    Account account = gson.fromJson(element, Account.class);
 
-        for (int i = 0 ; i < array.size() ; i++) {
-            JsonElement element = array.get(i);
-            Account account = gson.fromJson(element, Account.class);
+                    if (user.equals(account.getAccountName()) && pass.equals(account.getPass())) {
+                        studentIdPass =  account.getStudentId() ;
+                        UserPass = account.getName();
+                        isUser = true;
+                    }
+                }
+                reader.close();
+            } catch (NullPointerException e) {
+                AlertBox.display("WARNING!!!", "ยังไม่มีข้อมูล กรุณาลงทะเบียน!!!", 300, 250);
+            }
 
-            if (user.equals(account.getAccountName()) && pass.equals(account.getPass())) {
-                studentIdPass =  account.getStudentId() ;
-                isUser = true;
+            if (isUser) {
+                Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                Scene homepageView = new Scene(homepage, 693, 470);
+                Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+                window.setScene(homepageView);
+                window.show();
+            } else if (isUser == false) {
+                try {
+                    array.size();
+                    AlertBox.display("WARNING!!!", "User || Pass ไม่ถูกต้อง!!!", 300, 250);
+
+                } catch (NullPointerException e) {
+                    AlertBox.display("WARNING!!!", "ยังไม่มีข้อมูล กรุณาลงทะเบียน!!!", 300, 250);
+                }
             }
         }
-        reader.close();
 
-        if (isUser) {
-            Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-            Scene homepageView = new Scene(homepage, 693, 470);
-            Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            window.setScene(homepageView);
-            window.show();
-        }
+
     }
 
     public void onClickRegisOk(ActionEvent actionEvent) throws IOException {
@@ -103,27 +119,30 @@ public class LoginController {
                 Account account = gson.fromJson(element, Account.class);
                 allAccount.add(account);
             }
-            Account a = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-            allAccount.add(a);
-            String json = gson.toJson(allAccount);
-            PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
-            printWriter.println(json);
-            reader.close();
-            printWriter.close();
+            if (name.getText().equals("") || studentId.getText().equals("") || gender.getText().equals("     เพศ") || accountName.getText().equals("") || pass.getText().equals("")) {
+                AlertBox.display("WARNING!!!", "ใส่ข้อมูลให้ครบถ้วน!!!", 300, 250);
+            } else {
+                Account a = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
+                allAccount.add(a);
+                String json = gson.toJson(allAccount);
+                PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+                printWriter.println(json);
+                reader.close();
+                printWriter.close();
 
-            ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
-            dataAccSubs.add(createDataAccSub(name.getText()));
-            Gson gsonColor = new Gson();
-            String jsonColor = gsonColor.toJson(dataAccSubs);
+                ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
+                dataAccSubs.add(createDataAccSub(name.getText()));
+                Gson gsonColor = new Gson();
+                String jsonColor = gsonColor.toJson(dataAccSubs);
 
-            File file = new File(studentId.getText()+".json");
-            FileWriter file1 = new FileWriter(file);
-            PrintWriter printWriterColor = new PrintWriter(file1);
-            printWriterColor.println(jsonColor);
-            printWriterColor.flush();
-            file.createNewFile();
-            printWriterColor.close();
-
+                File file = new File(studentId.getText()+".json");
+                FileWriter file1 = new FileWriter(file);
+                PrintWriter printWriterColor = new PrintWriter(file1);
+                printWriterColor.println(jsonColor);
+                printWriterColor.flush();
+                file.createNewFile();
+                printWriterColor.close();
+            }
         }
 
         Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -137,10 +156,6 @@ public class LoginController {
 
     public static String getUserPass() {
         return UserPass;
-    }
-
-    private static void setUserPass(String userPass) {
-        UserPass = userPass;
     }
 
     public static String getStudentIdPass() {

@@ -102,7 +102,6 @@ public class Homepage {
                         }
                     });
                 }
-
                 if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("green")) {
                     button.setStyle("-fx-background-color: #006e0a;");
                     button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ผ่านแล้ว");
@@ -232,6 +231,6 @@ public class Homepage {
 
     @FXML public void onClickAccount(ActionEvent actionEvent) throws IOException {
         setColorButtonClass(accountButton,class1,class2,class3,class4);
-        AlertBox.displayAccount("Account", LoginController.getUserPass(), LoginController.getStudentIdPass(), 400, 200, accountButton);
+        AlertBox.displayAccount("Account", LoginController.getUserPass(), LoginController.getStudentIdPass(), 500, 250, accountButton);
     }
 }
