@@ -60,67 +60,67 @@ public class MainClassWriteFile {
     private static void writeFile() throws IOException {
 
         ArrayList<Subject> team1Pee1 = new ArrayList<>();
-        team1Pee1.add(new Subject("0","0",0,Color.RED,0,0,0));
-        team1Pee1.add(new Subject("01417111","Calculus I",3, Color.RED, 1, 0, 0));
-        team1Pee1.add(new Subject("01418112","Fund. Programming Concepts",3, Color.RED, 2, 0, 0));
-        team1Pee1.add(new Subject("01418114", "Intro. to Computer Science", 2, Color.RED, 3, 0, 0));
-        team1Pee1.add(new Subject("01418131", "Digital Computer Logic", 3, Color.RED, 4, 0, 0));
-        team1Pee1.add(new Subject("01999111", "ศาสตร์แห่งแผ่นดิน", 2, Color.RED, 5, 0, 0));
-        team1Pee1.add(new Subject("01", "(สาระภาษาฯ - ภาษาต่างประเทศ 1)", 3, Color.RED, 6, 0, 0));
-        team1Pee1.add(new Subject("01", "(สาระภาษาฯ - ภาษาไทย)", 3, Color.RED, 7, 0 , 0));
+        team1Pee1.add(new Subject("0","0",0,Color.ORANGE,0,0,0));
+        team1Pee1.add(new Subject("01417111","Calculus I",3, Color.ORANGE, 1, 0, 0));
+        team1Pee1.add(new Subject("01418112","Fund. Programming Concepts",3, Color.ORANGE, 2, 0, 0));
+        team1Pee1.add(new Subject("01418114", "Intro. to Computer Science", 2, Color.ORANGE, 3, 0, 0));
+        team1Pee1.add(new Subject("01418131", "Digital Computer Logic", 3, Color.ORANGE, 4, 0, 0));
+        team1Pee1.add(new Subject("01999111", "ศาสตร์แห่งแผ่นดิน", 2, Color.GREEN, 5, 0, 0));
+        team1Pee1.add(new Subject("01", "(สาระภาษาฯ - ภาษาต่างประเทศ 1)", 3, Color.GREEN, 6, 0, 0));
+        team1Pee1.add(new Subject("01", "(สาระภาษาฯ - ภาษาไทย)", 3, Color.GREEN, 7, 0 , 0));
 
         ArrayList<Subject> team2Pee1 = new ArrayList<>();
         team2Pee1.add(new Subject("01417112", "Calculus II", 3, Color.RED, 8, 1, 0));
-        team2Pee1.add(new Subject("01418113", "Computer Programming", 3, Color.RED, 9, 2, 0));
-        team2Pee1.add(new Subject("01418132", "Fundamentals of Computing", 4, Color.RED, 10, 0, 0));
-        team2Pee1.add(new Subject("01175", "(สาระอยู่ดีมีสุข - พลศึกษา)", 1, Color.RED, 11, 0, 0));
-        team2Pee1.add(new Subject("01", "(สาระศาสตร์แห่งผู้ประกอบการ)", 3, Color.RED, 12, 0, 0));
-        team2Pee1.add(new Subject("01", "(สาระพลเมืองไทยฯ)", 1, Color.RED, 13, 0, 0));
-        team2Pee1.add(new Subject("01", "(สาระสุนทรียศาสตร์)", 3, Color.RED, 14, 0, 0));
+        team2Pee1.add(new Subject("01418113", "Computer Programming", 3, Color.ORANGE, 9, 2, 0));
+        team2Pee1.add(new Subject("01418132", "Fundamentals of Computing", 4,Color.ORANGE, 10, 0, 0));
+        team2Pee1.add(new Subject("01175", "(สาระอยู่ดีมีสุข - พลศึกษา)", 1, Color.GREEN, 11, 0, 0));
+        team2Pee1.add(new Subject("01", "(สาระศาสตร์แห่งผู้ประกอบการ)", 3, Color.GREEN, 12, 0, 0));
+        team2Pee1.add(new Subject("01", "(สาระพลเมืองไทยฯ)", 1, Color.GREEN, 13, 0, 0));
+        team2Pee1.add(new Subject("01", "(สาระสุนทรียศาสตร์)", 3, Color.GREEN, 14, 0, 0));
 
         ArrayList<Subject> team1Pee2 = new ArrayList<>();
         team1Pee2.add(new Subject("01417322", "Introductory Linear Algebra", 3, Color.RED, 15, 8, 0));
         team1Pee2.add(new Subject("01418211", "Software Construction", 3, Color.RED, 16, 9, 0));
-        team1Pee2.add(new Subject("01418231", "Data Structures", 3, Color.RED, 17, 9, 0));
-        team1Pee2.add(new Subject("01422111", "Principles of Statistics", 3, Color.RED, 18, 0, 0));
-        team1Pee2.add(new Subject("01", "(สาระภาษาฯ - IT/Computer)", 1, Color.RED, 19, 0,0));
-        team1Pee2.add(new Subject("01", "(สาระอยู่ดีมีสุข)", 2, Color.RED, 20, 0, 0));
-        team1Pee2.add(new Subject("01", "(ทั้ง 5 สาระ - คณะวิทยาศาสตร์)", 3, Color.RED, 21, 0, 0));
+        team1Pee2.add(new Subject("01418231", "Data Structures", 3, Color.ORANGE, 17, 9, 0));
+        team1Pee2.add(new Subject("01422111", "Principles of Statistics", 3, Color.ORANGE, 18, 0, 0));
+        team1Pee2.add(new Subject("01", "(สาระภาษาฯ - IT/Computer)", 1, Color.GREEN, 19, 0,0));
+        team1Pee2.add(new Subject("01", "(สาระอยู่ดีมีสุข)", 2, Color.GREEN, 20, 0, 0));
+        team1Pee2.add(new Subject("01", "(ทั้ง 5 สาระ - คณะวิทยาศาสตร์)", 3, Color.ORANGE, 21, 0, 0));
 
         ArrayList<Subject> team2Pee2 = new ArrayList<>();
-        team2Pee2.add(new Subject("01418221", "Fund. of Database Systems", 3, Color.RED, 22, 9, 0));
+        team2Pee2.add(new Subject("01418221", "Fund. of Database Systems", 3, Color.ORANGE, 22, 9, 0));
         team2Pee2.add(new Subject("01418232", "Algorithms Design and Analysis", 3, Color.RED, 23, 10, 0));
-        team2Pee2.add(new Subject("01418233", "Assembly Lang. and Comp. Arch.", 4, Color.RED, 24, 9, 0));
-        team2Pee2.add(new Subject("01418", "Major Electives I", 3, Color.RED, 25, 0, 0));
-        team2Pee2.add(new Subject("01", "(สาระภาษาฯ - ภาษาต่างประเทศ 2)", 3, Color.RED, 26, 0, 0));
-        team2Pee2.add(new Subject("01", "(ทั้ง 5 สาระ - คณะวิทยาศาสตร์)", 2, Color.RED, 27, 0, 0));
+        team2Pee2.add(new Subject("01418233", "Assembly Lang. and Comp. Arch.", 4, Color.ORANGE, 24, 9, 0));
+        team2Pee2.add(new Subject("01418", "Major Electives I", 3, Color.ORANGE, 25, 0, 0));
+        team2Pee2.add(new Subject("01", "(สาระภาษาฯ - ภาษาต่างประเทศ 2)", 3, Color.ORANGE, 26, 0, 0));
+        team2Pee2.add(new Subject("01", "(ทั้ง 5 สาระ - คณะวิทยาศาสตร์)", 2, Color.ORANGE, 27, 0, 0));
 
         ArrayList<Subject> team1Pee3 = new ArrayList<>();
         team1Pee3.add(new Subject("01418321", "System Analysis and Design", 3, Color.RED, 28, 16, 22));
         team1Pee3.add(new Subject("01418331", "Operating Systems", 4, Color.RED, 29, 24, 0));
-        team1Pee3.add(new Subject("01418341", "Intellectual Prop & Profess. Ethics", 3, Color.RED, 30, 0, 0));
+        team1Pee3.add(new Subject("01418341", "Intellectual Prop & Profess. Ethics", 3, Color.ORANGE, 30, 0, 0));
         team1Pee3.add(new Subject("01418497", "Seminar", 1, Color.RED, 31, 23, 24));
         team1Pee3.add(new Subject("01418", "Major Electives II", 3, Color.RED, 32, 0,0));
         team1Pee3.add(new Subject("01", "(สาระภาษาฯ - ภาษาต่างประเทศ 3)", 3, Color.RED, 33,0,0));
 
         ArrayList<Subject> team2Pee3 = new ArrayList<>();
-        team2Pee3.add(new Subject("01418332", "Information System Security", 3, Color.RED, 34, 29, 0));
+        team2Pee3.add(new Subject("01418332", "Information System Security", 3, Color.ORANGE, 34, 29, 0));
         team2Pee3.add(new Subject("01418333", "Automata Theory", 2, Color.RED, 35, 10,0));
         team2Pee3.add(new Subject("01418334", "Compiler Techniques", 2, Color.RED, 36, 29,0));
-        team2Pee3.add(new Subject("01418351", "Prin. in CCs & Cloud Computing", 3, Color.RED, 37, 0,0));
+        team2Pee3.add(new Subject("01418351", "Prin. in CCs & Cloud Computing", 3, Color.ORANGE, 37, 0,0));
         team2Pee3.add(new Subject("01418390", "Co-op. Education Preparation", 1, Color.RED, 38, 28, 0));
-        team2Pee3.add(new Subject("01418", "Major Electives III", 3, Color.RED, 39, 0, 0));
-        team2Pee3.add(new Subject("01", "Free Electives I", 3, Color.RED, 40, 0, 0));
+        team2Pee3.add(new Subject("01418", "Major Electives III", 3, Color.ORANGE, 39, 0, 0));
+        team2Pee3.add(new Subject("01", "Free Electives I", 3, Color.ORANGE, 40, 0, 0));
 
         ArrayList<Subject> team1Pee4 = new ArrayList<>();
-        team1Pee4.add(new Subject("01418490", "Co-op. Education", 6, Color.RED, 41, 38,0));
+        team1Pee4.add(new Subject("01418490", "Co-op. Education", 6, Color.ORANGE, 41, 38,0));
 
         ArrayList<Subject> team2Pee4 = new ArrayList<>();
         team2Pee4.add(new Subject("01418499", "CS Project", 3, Color.RED, 42, 28, 0));
-        team2Pee4.add(new Subject("01418", "Major Electives IV", 3, Color.RED, 43, 0,0));
-        team2Pee4.add(new Subject("01418", "Major Electives V", 3, Color.RED, 44, 0,0));
-        team2Pee4.add(new Subject("01418", "Major Electives VI", 3, Color.RED, 45,0,0));
-        team2Pee4.add(new Subject("01", "Free Electives II", 3, Color.RED, 46,0,0));
+        team2Pee4.add(new Subject("01418", "Major Electives IV", 3, Color.ORANGE, 43, 0,0));
+        team2Pee4.add(new Subject("01418", "Major Electives V", 3, Color.ORANGE, 44, 0,0));
+        team2Pee4.add(new Subject("01418", "Major Electives VI", 3, Color.ORANGE, 45,0,0));
+        team2Pee4.add(new Subject("01", "Free Electives II", 3, Color.ORANGE, 46,0,0));
 
         Gson gson1 = new Gson();
         Gson gson2 = new Gson();

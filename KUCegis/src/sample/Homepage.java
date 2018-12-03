@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -12,11 +13,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Reflection;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.w3c.dom.NodeList;
@@ -44,14 +48,54 @@ public class Homepage {
         }
         return to;
     }
-    MenuButton  makeButton(Subject subject){
-        MenuButton button = new MenuButton();
-
+    MenuButton  makeButton(Subject subject,DataAccSub dataAccSub){
+        MenuButton button ;
+        DropShadow shadow = new DropShadow();
 //        if(subject.getColorSub().equals(Color.RED)){
             Text text = new Text(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   "
-                    + "(" + subject.getSubjectcredit() + ")           ระดับ:"  );
-            text.setFill(Color.WHITE);
+                    + "(" + subject.getSubjectcredit() + ")    "  );
+            Text text1 = new Text();
             button = new MenuButton(text.getText());
+            MenuButton finalButton1 = button;
+            button.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+                    @Override public void handle(MouseEvent e) {
+                        if(subject.getColorSub().equals(Color.RED)){
+                            text1.setText("                                                              ยากมาก");
+                            button.setStyle("-fx-background-color: #ef5baa;");
+                        }if (subject.getColorSub().equals(Color.ORANGE)){
+                            text1.setText("                                                              ปานกลาง");
+                            button.setStyle("-fx-background-color: #f78f2e;");
+                        }if(subject.getColorSub().equals(Color.GREEN)){
+                            text1.setText("                                                              ง่ายๆ");
+                            button.setStyle("-fx-background-color: #94ef39;");
+                        }
+                        finalButton1.setEffect(shadow);
+                        text1.setFont(Font.font(60));
+                        button.setText(text1.getText());
+                        button.setTextFill(BLACK);
+                    }
+                });
+            MenuButton finalButton = button;
+            button.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+                    @Override public void handle(MouseEvent e) {
+                        finalButton.setEffect(null);
+                        if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("green")) {
+                            button.setStyle("-fx-background-color: #006e0a;");
+                            button.setText(text.getText() + "ผ่านแล้ว");
+
+                        }if(dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("red")){
+                            button.setStyle("-fx-background-color: #6e0200;");
+                            button.setText(text.getText() + "ยังไม่ผ่าน");
+                        }if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("gray")) {
+                            button.setStyle("-fx-background-color: #4f4f4f");
+                            button.setText(text.getText());
+                        }
+
+                        button.setTextFill(LIGHTGREEN);
+
+                    }
+                });
+
             return  button;
 //        }
 
@@ -74,7 +118,7 @@ public class Homepage {
             Subject subject = gson.fromJson(element1, Subject.class);
 
             if (subject.getPassSub() != 0) {
-                MenuButton button = makeButton(subject);
+                MenuButton button = makeButton(subject,dataAccSub);
 
                 MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
                 MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
@@ -125,15 +169,15 @@ public class Homepage {
                 }
                 if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("red")) {
                     button.setStyle("-fx-background-color: #6e0200;");
-                    button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ไม่ผ่าน");
+                    button.setText(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")" + "           ยังไม่ผ่าน");
                 }
                 if (dataAccSub.getSub(subject.getPassSub()).getColorSub().equals("gray")) {
                     button.setStyle("-fx-background-color: #4f4f4f");
                 }
                 button.setPrefWidth(520);
-//              button.setTextFill(LIGHTGREEN);
+              button.setTextFill(LIGHTGREEN);
 //                button.setBorder(new Border(new BorderStroke(subject.getColorSub(), BorderStrokeStyle.SOLID, new CornerRadii(30), new BorderWidths(2))))
-//                vbox.getChildren().add(new Text(""));
+                vbox.getChildren().add(new Text(""));
                 vbox.getChildren().add(button);
             }
         }

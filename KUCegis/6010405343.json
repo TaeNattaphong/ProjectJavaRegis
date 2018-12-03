@@ -18,8 +18,8 @@
     },
     "intro": {
       "id": 3,
-      "colorSub": "green",
-      "study": "true"
+      "colorSub": "red",
+      "study": "false"
     },
     "digital": {
       "id": 4,
@@ -43,8 +43,8 @@
     },
     "calII": {
       "id": 8,
-      "colorSub": "green",
-      "study": "true"
+      "colorSub": "gray",
+      "study": "false"
     },
     "comPro": {
       "id": 9,
@@ -58,8 +58,8 @@
     },
     "gym": {
       "id": 11,
-      "colorSub": "green",
-      "study": "true"
+      "colorSub": "red",
+      "study": "false"
     },
     "entrepreneurship": {
       "id": 12,
