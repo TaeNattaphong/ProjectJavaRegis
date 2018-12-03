@@ -24,13 +24,7 @@ public class Subject {
         this.continueSub1 = continueSub1;
         this.continueSub2 = continueSub2;
     }
-    public Subject(int passSub){
-        this.subjectnumber = subjectnumber;
-        this.subjectname = subjectname;
-        this.subjectcredit = subjectcredit;
-        this.colorSub = Color.RED;
-        this.passSub = passSub;
-    }
+
 
     public int getContinueSub1() {
         return continueSub1;

@@ -1,0 +1,240 @@
+[
+  {
+    "user": "ปริญญา  ทองทวี",
+    "zero": {
+      "id": 0,
+      "colorSub": "gray",
+      "study": "true"
+    },
+    "calI": {
+      "id": 1,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "fundPCon": {
+      "id": 2,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "intro": {
+      "id": 3,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "digital": {
+      "id": 4,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "knowledge": {
+      "id": 5,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "language1": {
+      "id": 6,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "thai": {
+      "id": 7,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "calII": {
+      "id": 8,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "comPro": {
+      "id": 9,
+      "colorSub": "red",
+      "study": "false"
+    },
+    "FundofCom": {
+      "id": 10,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "gym": {
+      "id": 11,
+      "colorSub": "green",
+      "study": "true"
+    },
+    "entrepreneurship": {
+      "id": 12,
+      "colorSub": "red",
+      "study": "false"
+    },
+    "thaicitizens": {
+      "id": 13,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "aesthetics": {
+      "id": 14,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "linear": {
+      "id": 15,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "softwareCon": {
+      "id": 16,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "data": {
+      "id": 17,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "stat": {
+      "id": 18,
+      "colorSub": "red",
+      "study": "false"
+    },
+    "iTComputer": {
+      "id": 19,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "happy": {
+      "id": 20,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "science1": {
+      "id": 21,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "database": {
+      "id": 22,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "algorithms": {
+      "id": 23,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "assembly": {
+      "id": 24,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesI": {
+      "id": 25,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "language2": {
+      "id": 26,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "science2": {
+      "id": 27,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "systemAnalysis": {
+      "id": 28,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "os": {
+      "id": 29,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "intellectualProp": {
+      "id": 30,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "seminar1": {
+      "id": 31,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesII": {
+      "id": 32,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "language3": {
+      "id": 33,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "security": {
+      "id": 34,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "automata": {
+      "id": 35,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "compiler": {
+      "id": 36,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "cloudComputing": {
+      "id": 37,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "coop": {
+      "id": 38,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesIII": {
+      "id": 39,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "freeElectivesI": {
+      "id": 40,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "coopEducation": {
+      "id": 41,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "csProject": {
+      "id": 42,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesIV": {
+      "id": 43,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesV": {
+      "id": 44,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "majorElectivesVI": {
+      "id": 45,
+      "colorSub": "gray",
+      "study": "false"
+    },
+    "freeElectivesII": {
+      "id": 46,
+      "colorSub": "gray",
+      "study": "false"
+    }
+  }
+]
