@@ -16,11 +16,9 @@ public class PassColorSub {
     }
 
     public String isStudy() {
-        if(id == 0)
-        this.study = "true";
+
         return study;
     }
-
     public void setStudy(String study) {
         this.study = study;
     }

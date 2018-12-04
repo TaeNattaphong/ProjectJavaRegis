@@ -35,6 +35,7 @@ public class Homepage {
     @FXML private Button class1, class2, class3, class4, accountButton, logoutBun;
     @FXML private VBox vboxTeam1, vboxTeam2;
     private HashMap<Integer, PassColorSub> to;
+    private ArrayList<Subject> sub;
     public HashMap<Integer, PassColorSub> updateTrueFalse() throws FileNotFoundException {
         HashMap<Integer,PassColorSub> to = new HashMap<>();
         BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
@@ -48,12 +49,73 @@ public class Homepage {
         }
         return to;
     }
+    ArrayList<Subject> sub() throws FileNotFoundException {
+        sub = new ArrayList<>();
+        BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee1Team1.json"));
+        BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee1Team2.json"));
+        BufferedReader reader3 = new BufferedReader(new FileReader("SubjectPee2Team1.json"));
+        BufferedReader reader4 = new BufferedReader(new FileReader("SubjectPee2Team2.json"));
+        BufferedReader reader5 = new BufferedReader(new FileReader("SubjectPee3Team1.json"));
+        BufferedReader reader6 = new BufferedReader(new FileReader("SubjectPee3Team2.json"));
+        BufferedReader reader7 = new BufferedReader(new FileReader("SubjectPee4Team1.json"));
+        BufferedReader reader8 = new BufferedReader(new FileReader("SubjectPee4Team2.json"));
+
+        Gson gson = new Gson();
+        JsonArray array1 = gson.fromJson(reader1, JsonArray.class);
+        JsonArray array2 = gson.fromJson(reader2, JsonArray.class);
+        JsonArray array3 = gson.fromJson(reader3, JsonArray.class);
+        JsonArray array4 = gson.fromJson(reader4, JsonArray.class);
+        JsonArray array5 = gson.fromJson(reader5, JsonArray.class);
+        JsonArray array6 = gson.fromJson(reader6, JsonArray.class);
+        JsonArray array7 = gson.fromJson(reader7, JsonArray.class);
+        JsonArray array8 = gson.fromJson(reader8, JsonArray.class);
+        for(int i = 0 ; i < array1.size() ; i++) {
+            JsonElement element1 = array1.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array2.size() ; i++) {
+            JsonElement element1 = array2.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array3.size() ; i++) {
+            JsonElement element1 = array3.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array4.size() ; i++) {
+            JsonElement element1 = array4.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array5.size() ; i++) {
+            JsonElement element1 = array5.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array6.size() ; i++) {
+            JsonElement element1 = array6.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array7.size() ; i++) {
+            JsonElement element1 = array7.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        for(int i = 0 ; i < array8.size() ; i++) {
+            JsonElement element1 = array8.get(i);
+            Subject subject = gson.fromJson(element1, Subject.class);
+            sub.add(subject);
+        }
+        return sub;
+    }
     MenuButton  makeButton(Subject subject,DataAccSub dataAccSub){
         MenuButton button ;
         DropShadow shadow = new DropShadow();
-//        if(subject.getColorSub().equals(Color.RED)){
-            Text text = new Text(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   "
-                    + "(" + subject.getSubjectcredit() + ")    "  );
+            Text text = new Text(subject.getSubjectnumber() + "   " + subject.getSubjectname() +
+                    "   (" + subject.getSubjectcredit() + ")    "  );
             Text text1 = new Text();
             button = new MenuButton(text.getText());
             MenuButton finalButton1 = button;
@@ -61,16 +123,16 @@ public class Homepage {
                     @Override public void handle(MouseEvent e) {
                         if(subject.getColorSub().equals(Color.RED)){
                             text1.setText("                                                              ยากมาก");
-                            button.setStyle("-fx-background-color: #ef5baa;");
+                            button.setStyle("-fx-background-color: #db1515;");
                         }if (subject.getColorSub().equals(Color.ORANGE)){
                             text1.setText("                                                              ปานกลาง");
-                            button.setStyle("-fx-background-color: #f78f2e;");
+                            button.setStyle("-fx-background-color: #00d4ff;");
                         }if(subject.getColorSub().equals(Color.GREEN)){
                             text1.setText("                                                              ง่ายๆ");
                             button.setStyle("-fx-background-color: #94ef39;");
                         }
                         finalButton1.setEffect(shadow);
-                        text1.setFont(Font.font(60));
+                        text1.setFont(Font.font(80));
                         button.setText(text1.getText());
                         button.setTextFill(BLACK);
                     }
@@ -90,16 +152,11 @@ public class Homepage {
                             button.setStyle("-fx-background-color: #4f4f4f");
                             button.setText(text.getText());
                         }
-
                         button.setTextFill(LIGHTGREEN);
 
                     }
                 });
-
             return  button;
-//        }
-
-//        return button;
     }
     public void creatButtonSubject(BufferedReader reader, VBox vbox, int numClass) throws FileNotFoundException {
         BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
@@ -116,16 +173,35 @@ public class Homepage {
         for(int i = 0 ; i < array.size() ; i++) {
             JsonElement element1 = array.get(i);
             Subject subject = gson.fromJson(element1, Subject.class);
-
             if (subject.getPassSub() != 0) {
                 MenuButton button = makeButton(subject,dataAccSub);
-
                 MenuItem item1 = new MenuItem("                                                  ผ่าน                                              ");
                 MenuItem item2 = new MenuItem("                                                 ไม่ผ่าน                                              ");
                 button.getItems().addAll(item1, item2);
+
                 if(to.get(subject.getContinueSub1()).isStudy().equals("false")){
-                    item1.setVisible(false);
-                    item2.setVisible(false);
+                    ArrayList<Subject> sub  = sub();
+                    item1.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Information Dialog");
+                            alert.setHeaderText(null);
+                            alert.setContentText("วิชา: "+"   "+sub.get(subject.getContinueSub1()).getSubjectname()+"  ยังไม่ผ่าน");
+                            alert.showAndWait();
+                        }
+                    });
+                    item2.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Information Dialog");
+                            alert.setHeaderText(null);
+                            alert.setContentText("วิชา: "+"   "+sub.get(subject.getContinueSub1()).getSubjectname()+"  ยังไม่ผ่าน");
+                            alert.showAndWait();
+                        }
+                    });
+
                     try {
                         setColorInFile("gray", subject);
                     } catch (IOException e) {
@@ -133,6 +209,7 @@ public class Homepage {
                     }
                     button.setStyle("-fx-background-color: #979797;");
                     button.setAccessibleHelp(subject.getSubjectnumber() + "   " + subject.getSubjectname() + "   " + "(" + subject.getSubjectcredit() + ")");
+
                 }else {
                     item1.setOnAction(e -> {
                         button.setStyle("-fx-background-color: #006e0a;");
@@ -176,8 +253,6 @@ public class Homepage {
                 }
                 button.setPrefWidth(520);
               button.setTextFill(LIGHTGREEN);
-//                button.setBorder(new Border(new BorderStroke(subject.getColorSub(), BorderStrokeStyle.SOLID, new CornerRadii(30), new BorderWidths(2))))
-                vbox.getChildren().add(new Text(""));
                 vbox.getChildren().add(button);
             }
         }
