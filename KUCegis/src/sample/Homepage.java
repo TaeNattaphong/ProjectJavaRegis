@@ -8,37 +8,33 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Reflection;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.w3c.dom.NodeList;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import static javafx.scene.paint.Color.*;
 
 public class Homepage {
     @FXML private Button class1, class2, class3, class4, accountButton, logoutBun;
     @FXML private VBox vboxTeam1, vboxTeam2;
+    private File fileData;
     private HashMap<Integer, PassColorSub> to;
     private ArrayList<Subject> sub;
+
     public HashMap<Integer, PassColorSub> updateTrueFalse() throws FileNotFoundException {
         HashMap<Integer,PassColorSub> to = new HashMap<>();
-        BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
+        BufferedReader readerColor = new BufferedReader(new FileReader(fileData));
         Gson gson = new Gson();
         JsonArray arrayColor = gson.fromJson(readerColor, JsonArray.class);
         JsonElement element = arrayColor.get(0);
@@ -119,24 +115,22 @@ public class Homepage {
             Text text1 = new Text();
             button = new MenuButton(text.getText());
             MenuButton finalButton1 = button;
-            button.addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
-                    @Override public void handle(MouseEvent e) {
-                        if(subject.getColorSub().equals(Color.RED)){
-                            text1.setText("                                                              ยากมาก");
-                            button.setStyle("-fx-background-color: #db1515;");
-                        }if (subject.getColorSub().equals(Color.ORANGE)){
-                            text1.setText("                                                              ปานกลาง");
-                            button.setStyle("-fx-background-color: #00d4ff;");
-                        }if(subject.getColorSub().equals(Color.GREEN)){
-                            text1.setText("                                                              ง่ายๆ");
-                            button.setStyle("-fx-background-color: #94ef39;");
-                        }
-                        finalButton1.setEffect(shadow);
-                        text1.setFont(Font.font(80));
-                        button.setText(text1.getText());
-                        button.setTextFill(BLACK);
-                    }
-                });
+            button.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+                if(subject.getColorSub().equals(Color.RED)){
+                    text1.setText("                                                              ยากมาก");
+                    button.setStyle("-fx-background-color: #db1515;");
+                }if (subject.getColorSub().equals(Color.ORANGE)){
+                    text1.setText("                                                              ปานกลาง");
+                    button.setStyle("-fx-background-color: #00d4ff;");
+                }if(subject.getColorSub().equals(Color.GREEN)){
+                    text1.setText("                                                              ง่ายๆ");
+                    button.setStyle("-fx-background-color: #94ef39;");
+                }
+                finalButton1.setEffect(shadow);
+                text1.setFont(Font.font(80));
+                button.setText(text1.getText());
+                button.setTextFill(BLACK);
+            });
             MenuButton finalButton = button;
             button.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
                     @Override public void handle(MouseEvent e) {
@@ -158,8 +152,8 @@ public class Homepage {
                 });
             return  button;
     }
-    public void creatButtonSubject(BufferedReader reader, VBox vbox, int numClass) throws FileNotFoundException {
-        BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
+    public void createButtonSubject(BufferedReader reader, VBox vbox, int numClass) throws FileNotFoundException {
+        BufferedReader readerColor = new BufferedReader(new FileReader(fileData));
         Gson gson = new Gson();
         JsonArray arrayColor = gson.fromJson(readerColor, JsonArray.class);
         JsonElement element = arrayColor.get(0);
@@ -260,7 +254,7 @@ public class Homepage {
 
 
     public void setColorInFile(String color, Subject subject) throws IOException {
-        BufferedReader readerColor = new BufferedReader(new FileReader(LoginController.getStudentIdPass()+".json"));
+        BufferedReader readerColor = new BufferedReader(new FileReader(fileData));
 
         Gson gsonColor = new GsonBuilder().setPrettyPrinting().create();
         JsonArray arrayColor = gsonColor.fromJson(readerColor, JsonArray.class);
@@ -279,7 +273,7 @@ public class Homepage {
 
         all.add(dataAccSub);
         String json = gsonColor.toJson(all);
-        PrintWriter printWriter = new PrintWriter(new FileWriter(LoginController.getStudentIdPass()+".json"));
+        PrintWriter printWriter = new PrintWriter(new FileWriter(fileData));
         printWriter.println(json);
         printWriter.flush();
         readerColor.close();
@@ -307,15 +301,15 @@ public class Homepage {
         setColorButtonClass(class1,class2,class3,class4,accountButton);
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee1Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee1Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 1);
-        creatButtonSubject(reader2, vboxTeam2, 1);
+        createButtonSubject(reader1, vboxTeam1, 1);
+        createButtonSubject(reader2, vboxTeam2, 1);
     }
 
     public void setClass11() throws FileNotFoundException {
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee1Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee1Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 1);
-        creatButtonSubject(reader2, vboxTeam2, 1);
+        createButtonSubject(reader1, vboxTeam1, 1);
+        createButtonSubject(reader2, vboxTeam2, 1);
     }
 
     @FXML
@@ -323,15 +317,15 @@ public class Homepage {
         setColorButtonClass(class2,class1,class3,class4,accountButton);
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee2Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee2Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 2);
-        creatButtonSubject(reader2, vboxTeam2, 2);
+        createButtonSubject(reader1, vboxTeam1, 2);
+        createButtonSubject(reader2, vboxTeam2, 2);
     }
 
     public void setClass22() throws FileNotFoundException {
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee2Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee2Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 2);
-        creatButtonSubject(reader2, vboxTeam2, 2);
+        createButtonSubject(reader1, vboxTeam1, 2);
+        createButtonSubject(reader2, vboxTeam2, 2);
     }
 
     @FXML
@@ -339,14 +333,14 @@ public class Homepage {
         setColorButtonClass(class3,class1,class2,class4,accountButton);
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee3Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee3Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 3);
-        creatButtonSubject(reader2, vboxTeam2, 3);
+        createButtonSubject(reader1, vboxTeam1, 3);
+        createButtonSubject(reader2, vboxTeam2, 3);
     }
     public void setClass33() throws FileNotFoundException {
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee3Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee3Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 3);
-        creatButtonSubject(reader2, vboxTeam2, 3);
+        createButtonSubject(reader1, vboxTeam1, 3);
+        createButtonSubject(reader2, vboxTeam2, 3);
     }
 
     @FXML
@@ -354,19 +348,23 @@ public class Homepage {
         setColorButtonClass(class4,class1,class2,class3,accountButton);
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee4Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee4Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 4);
-        creatButtonSubject(reader2, vboxTeam2, 4);
+        createButtonSubject(reader1, vboxTeam1, 4);
+        createButtonSubject(reader2, vboxTeam2, 4);
     }
     public void setClass44() throws FileNotFoundException {
         BufferedReader reader1 = new BufferedReader(new FileReader("SubjectPee4Team1.json"));
         BufferedReader reader2 = new BufferedReader(new FileReader("SubjectPee4Team2.json"));
-        creatButtonSubject(reader1, vboxTeam1, 4);
-        creatButtonSubject(reader2, vboxTeam2, 4);
+        createButtonSubject(reader1, vboxTeam1, 4);
+        createButtonSubject(reader2, vboxTeam2, 4);
     }
 
 
     @FXML public void onClickAccount(ActionEvent actionEvent) throws IOException {
         setColorButtonClass(accountButton,class1,class2,class3,class4);
         AlertBox.displayAccount("Account", LoginController.getUserPass(), LoginController.getStudentIdPass(), 500, 250, accountButton);
+    }
+
+    public void setFileData(File fileData) {
+        this.fileData = fileData;
     }
 }

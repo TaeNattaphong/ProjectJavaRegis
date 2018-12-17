@@ -3,6 +3,7 @@ package sample;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.google.gson.reflect.TypeToken;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 public class LoginController {
@@ -25,6 +27,21 @@ public class LoginController {
     @FXML private MenuButton gender;
     private static String UserPass;
     private static String studentIdPass;
+    private File fileAccount;
+    private File fileData;
+    private String pathAccount;
+    private String pathData;
+
+    public LoginController() throws URISyntaxException {
+        String jarDirPath = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
+        this.fileAccount = new File(jarDirPath+"\\"+"Account.json");
+        this.pathAccount = fileAccount.toURI().toString();
+        this.pathData = jarDirPath+"\\";
+    }
+
+    public String getPathData() {
+        return pathData;
+    }
 
     public void changeRegisClick(ActionEvent actionEvent) throws IOException {
         Parent regis = FXMLLoader.load(getClass().getResource("regisV2.fxml"));
@@ -34,7 +51,8 @@ public class LoginController {
         window.show();
     }
 
-    public void loginIdPass(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void loginIdPass(ActionEvent actionEvent) throws IOException {
         String user = userLogin.getText();
         String pass = passLogin.getText();
         userLogin.setText("");
@@ -43,7 +61,14 @@ public class LoginController {
         if (user.equals("") || pass.equals("")) AlertBox.display("WARNING!!!", "ใส่ข้อมูลให้ครบถ้วน!!!", 300, 250);
         else {
             boolean isUser = false;
-            BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
+            if (!fileAccount.exists()) {
+                try {
+                    fileAccount.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            BufferedReader reader = new BufferedReader(new FileReader(fileAccount));
             Gson gson = new Gson();
             JsonArray array = gson.fromJson(reader, JsonArray.class);
 
@@ -64,12 +89,16 @@ public class LoginController {
             }
 
             if (isUser) {
-                Parent homepage = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage.fxml"));
+                Parent homepage = loader.load();
                 Scene homepageView = new Scene(homepage, 693, 470);
                 Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+                Homepage controller = loader.getController();
+                controller.setFileData(new File(pathData + studentIdPass +".json"));
                 window.setScene(homepageView);
                 window.show();
-            } else if (isUser == false) {
+            } else {
                 try {
                     array.size();
                     AlertBox.display("WARNING!!!", "User || Pass ไม่ถูกต้อง!!!", 300, 250);
@@ -79,80 +108,81 @@ public class LoginController {
                 }
             }
         }
-
-
     }
 
-    public void onClickRegisOk(ActionEvent actionEvent) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("Account.json"));
+    @FXML
+    private void onClickRegisOk(ActionEvent actionEvent) {
+        ArrayList<Account> allAccount = readAccount();
+
+        receiveData(allAccount);
+        writeAccount(allAccount, fileAccount);
+
+        ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
+        dataAccSubs.add(createDataAccSub(name.getText()));
+        this.fileData = new File(pathData + studentId.getText()+".json");
+        writeAccount(dataAccSubs, fileData);
+        openLoginPage(actionEvent);
+//        System.out.println(allAccount);
+    }
+
+    private void openLoginPage(ActionEvent actionEvent) {
+        try {
+            Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Scene regisView = new Scene(regis, 330, 310);
+            Stage window = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+            window.setScene(regisView);
+            window.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void receiveData(ArrayList<Account> allAccount) {
+        if (name.getText().equals("")
+                || studentId.getText().equals("")
+                || gender.getText().equals("     เพศ")
+                || accountName.getText().equals("")
+                || pass.getText().equals(""))
+        {
+            AlertBox.display("WARNING!!!", "ใส่ข้อมูลให้ครบถ้วน!!!", 300, 250);
+            return;
+        }
+        Account account = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
+        allAccount.add(account);
+    }
+
+    private void writeAccount(ArrayList<?> array, File stream) {
         Gson gson = new Gson();
-        JsonArray array = gson.fromJson(reader, JsonArray.class);
-        ArrayList<Account> allAccount = new ArrayList<>();
+        String json = gson.toJson(array);
 
-        if (array == null) {
-            Account account = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-
-            allAccount.add(account);
-
-            String json = gson.toJson(allAccount);
-            PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
+        try {
+            PrintWriter printWriter = new PrintWriter(new FileWriter(stream));
             printWriter.println(json);
 
-            reader.close();
             printWriter.close();
-
-            ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
-            dataAccSubs.add(createDataAccSub(name.getText()));
-            Gson gsonColor = new Gson();
-            String jsonColor = gsonColor.toJson(dataAccSubs);
-
-            File file = new File(studentId.getText()+".json");
-            FileWriter file1 = new FileWriter(file);
-            PrintWriter printWriterColor = new PrintWriter(file1);
-            printWriterColor.println(jsonColor);
-            printWriterColor.flush();
-            file.createNewFile();
-            printWriterColor.close();
-        } else{
-            for (int i = 0; i < array.size(); i++) {
-                JsonElement element = array.get(i);
-                Account account = gson.fromJson(element, Account.class);
-                allAccount.add(account);
-            }
-            if (name.getText().equals("") || studentId.getText().equals("") || gender.getText().equals("     เพศ") || accountName.getText().equals("") || pass.getText().equals("")) {
-                AlertBox.display("WARNING!!!", "ใส่ข้อมูลให้ครบถ้วน!!!", 300, 250);
-            } else {
-                Account a = new Account(name.getText(), studentId.getText(), gender.getText(), accountName.getText(), pass.getText());
-                allAccount.add(a);
-                String json = gson.toJson(allAccount);
-                PrintWriter printWriter = new PrintWriter(new FileWriter("Account.json"));
-                printWriter.println(json);
-                reader.close();
-                printWriter.close();
-
-                ArrayList<DataAccSub> dataAccSubs = new ArrayList<>();
-                dataAccSubs.add(createDataAccSub(name.getText()));
-                Gson gsonColor = new Gson();
-                String jsonColor = gsonColor.toJson(dataAccSubs);
-
-                File file = new File(studentId.getText()+".json");
-                FileWriter file1 = new FileWriter(file);
-                PrintWriter printWriterColor = new PrintWriter(file1);
-                printWriterColor.println(jsonColor);
-                printWriterColor.flush();
-                file.createNewFile();
-                printWriterColor.close();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        Parent regis = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Scene regisView = new Scene(regis, 330, 310);
-        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(regisView);
-        window.show();
     }
 
+    private ArrayList<Account> readAccount() {
+        ArrayList<Account> allAccount = null;
 
+        if (!fileAccount.exists()) {
+            return new ArrayList<>();
+        }
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileAccount));
+            allAccount = new Gson().fromJson(reader, new TypeToken<ArrayList<Account>>(){}.getType());
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return allAccount;
+    }
 
     public static String getUserPass() {
         return UserPass;
